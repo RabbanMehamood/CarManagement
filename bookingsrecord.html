@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookings Record</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./bookingscss.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav_top">
+        <div>
+          <a href="./homepage.html"
+            ><img src="./AssetsHome/DrivoxeLogo.png" alt="logopng"
+          /></a>
+        </div>
+        <div>
+          <input
+            id="rentalIdValue"
+            type="search"
+            place="customerName"
+            placeholder="Ex: RentalId: 002"
+            value=""
+          />
+          <button id="searchIconButton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button id="bookButton" class="">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <h1 id="noRecord"></h1>
+      <div class="table_style">
+        <table id="rentalTable">
+          <thead>
+            <tr>
+              <th>Rental ID</th>
+              <th>Car Model</th>
+              <th>Fuel Type</th>
+              <th>Booked By</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Customer Name</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- checked getting object data here  -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Pop up for viewing rental details -->
+      <div id="viewModal" class="modal">
+        <div class="modal-content">
+          <button class="close" id="viewClose">&times;</button>
+          <h2>Booking Details</h2>
+          <div id="viewDetails" class="view_Details_style"></div>
+        </div>
+      </div>
+    </div>
+    <!-- pop-up modal for add button-------------------------------------------------------------------- -->
+    <div id="myModal1" class="modal_popup">
+      <div class="modal_content">
+        <span class="close" id="times2">&times;</span>
+        <h2 style="color: white">Car Rental Form</h2>
+        <form action="rentalForm" id="form" method="post">
+          <div>
+            <label for="rentalId">Rental ID :</label><br />
+            <input
+              type="text"
+              id="rentalId"
+              name="rentalId"
+              value=""
+              placeholder="Ex:001, 002, 003"
+              required
+            /><br /><br />
+          </div>
+          <div>
+            <label for="carModel">Car Model :</label><br />
+            <select
+              id="carModel"
+              name="Cartype"
+              style="width: 250px; height: 33px; border-radius: 10px"
+            >
+              <option value="Horizon Mirage Convertible">
+                Horizon Mirage Convertible
+              </option>
+              <option value="Zephyr A4 Stratos">Zephyr A4 Stratos</option>
+              <option value="Aurora X5 Nebula">Aurora X5 Nebula</option>
+              <option value="Vanguard CX2 Convertible">
+                Vanguard CX2 Convertible
+              </option>
+              <option value="Stellar Orion Hybrid">Stellar Orion Hybrid</option>
+              <option value="Vanguard C-Class Coupe">
+                Vanguard C-Class Coupe
+              </option>
+            </select>
+          </div>
+          <div>
+            <label for="mfdYear">Manufacturing Year:</label><br />
+            <input
+              type="number"
+              id="mfdYear"
+              name="mfdYear"
+              value="2001"
+            /><br /><br />
+          </div>
+
+          <div>
+            <label for="rentStartDate">Rent Start Date :</label><br />
+            <input
+              type="date"
+              id="rentStartDate"
+              name="rentStartDate"
+              required
+            /><br /><br />
+          </div>
+          <div>
+            <label for="rentEndDate">Rent End Date :</label><br />
+            <input
+              type="date"
+              id="rentEndDate"
+              name="rentEndDate"
+              required
+            /><br /><br />
+          </div>
+          <div>
+            <label for="customerName">Booked Customer Name :</label><br />
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              value=""
+              required
+            /><br /><br />
+          </div>
+          <div>
+            <label for="destinationPlace">Destination Place Name:</label><br />
+            <input
+              type="text"
+              id="destinationPlace"
+              name="destinationPlace"
+              value=""
+              required
+            /><br /><br />
+          </div>
+          <div>
+            <label for="startPlace">Start Place Name:</label><br />
+            <input
+              type="text"
+              id="startPlace"
+              name="startPlace"
+              value=""
+              required
+            /><br /><br />
+          </div>
+          <div class="checkbox_style">
+            <div style="display: flex; justify-content: space-between">
+              <input
+                type="checkbox"
+                id="isSinglePassenger"
+                name="isSinglePassenger"
+              />
+              <label for="isSinglePassenger" style="color: white"
+                >Is Single Passenger (including driver):</label
+              >
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <label for="fuelType" style="color: white">Fuel Type:</label>
+              <select id="fuelType" name="fuelType">
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="bookedBy">Booked by (logged in username):</label>
+            <input
+              type="text"
+              id="bookedBy"
+              name="bookedBy"
+              value=""
+            /><br /><br />
+          </div>
+
+          <button class="submit_style" type="submit" value="Submit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- end of the pop-up modal code-------------------------------------------------------------------- -->
+    <script src="./recordsindex.js"></script>
+  </body>
+</html>

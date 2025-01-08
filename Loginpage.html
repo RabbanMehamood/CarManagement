@@ -70,7 +70,7 @@
             border: none;
             padding-left: 10px;
             background-color:white; 
-            color:white;
+            color:black;
               
         }
         .icon{
@@ -102,63 +102,76 @@
             width: 70px;
 
         }
+        #loginSection{
+            display: block;
+        }
+        #registrationSection{
+            display: none;
+        }
 
         </style>
+        
 </head>
 <body>
+    
     <div class="main">
         
-        <div class="loginstyle">
+        <div id="loginSection" class="loginstyle">
             <img src="Assets/login-image.png" alt="loginImage" class="login-image">
-        <form style="margin-top: 10px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <form style="margin-top: 10px; text-align: center; display: flex; flex-direction: column; align-items: center;"
+        onsubmit="validateLoginForm(event)">
             <h2 align="center">LOGIN</h1>
                 <div class="username-div">
                     <img src="./Assets/userIcon.PNG" alt="userIcon" class="icon">
-                    <input class="name-field" type="text" placeholder="Username" name="usrnm" required>
+                    <input id="logName" class="name-field" type="text" placeholder="Username" name="usrnm" required />
                   </div>
 
                   <div class="username-div">
        -             <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
-                    <input class="name-field" type="password" placeholder="Password" name="usrnm" required>
+                    <input  id="logPassword" class="name-field" type="password" placeholder="Password" name="usrnm" required />
                   </div>
                   <div style="display: flex; align-items: center;">
-                  <input type="checkbox" id="rememberme" style="width: 20px; height: 20px; background-color: #77badb;" required>
+                  <input type="checkbox" id="rememberme" style="width: 20px; height: 20px; background-color: #77badb;" required />
                   <label for="rememberme" style="color: white;">Remember Me</label>
                   </div>
                   <div>
-                    <button class="login-button">LOGIN</button>
-                    <p style="color: white;">Forgot Username/Password ?</p>
+                    <button type="submit" value="login" class="login-button">LOGIN</button>
+                    <p id="errorMsg"></p>
+                    <p id="toregisterdiv" style="color: white;">If not Registered, click to Register -></p>
                   </div>
         </form>
         </div>
-        <div class="registerstyle">
-            <form style="margin-top: 40px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <div id="registrationSection" class="registerstyle">
+            <form style="margin-top: 40px; text-align: center; display: flex; flex-direction: column; align-items: center;"
+            onsubmit="validateSignupForm(event)">
                 <h2 align="center">SIGN UP</h1>
                     <div class="username-div">
                         <img src="./Assets/userIcon.PNG" alt="userIcon" class="icon">
-                        <input class="name-field" type="text" placeholder="Username" name="usrnm" required>
+                        <input id="signName" class="name-field" type="text" placeholder="Username" name="usrnm" required />
                       </div>
 
                       <div class="username-div" id="email">
                         <img src="./Assets/emailicon.png" alt="userIcon" class="icon">
-                        <input class="name-field" type="email" placeholder="E - mail" name="usrnm" required>
+                        <input id="signEmail" class="name-field" type="email" placeholder="E - mail" name="usrnm" required />
                       </div>
 
                       <div class="username-div">
                         <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
-                        <input class="name-field" type="password" placeholder="Password" name="usrnm" required>
+                        <input id="signPassword" class="name-field" type="password" placeholder="Password" name="usrnm" required />
                       </div>
 
                       <div class="username-div" id="confirm_password">
                         <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
-                        <input class="name-field" type="password" placeholder="Confirm Password" name="usrnm" required>
+                        <input id="signConfirmPassword" class="name-field" type="password" placeholder="Confirm Password" name="usrnm" required />
                       </div>
                       <div>
-                        <button class="login-button">CREATE ACCOUNT</button>
-                        <p style="color: white;">Already have an account? Login here</p>
+                        <button type="submit" class="login-button">CREATE ACCOUNT</button>
+                        <span></span><p id="tologinDiv" style="color: white;">Already have an account? Click to Login </p>
+                        </span>
                       </div>
             </form>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

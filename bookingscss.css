@@ -1,0 +1,130 @@
+.nav_top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 10px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:hover {
+  background-color: #d6eeee;
+}
+
+.modal {
+  text-align: center;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  color: aliceblue;
+  border-radius: 15px;
+  background-color: darkslategrey;
+}
+
+/* Add button pop up style ------------------------------------------------------------*/
+.modal_popup {
+  display: none;
+  text-align: center;
+  position: fixed;
+  overflow: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  color: aliceblue;
+  border-radius: 15px;
+  background-color: darkslategrey;
+}
+.modal_content {
+  border: none;
+  border-radius: 20px;
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: stretch;
+}
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  align-self: flex-end;
+}
+/* styling Form */
+form > div {
+  display: flex;
+  margin: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: stretch;
+  justify-content: flex-end;
+}
+
+form > div > input {
+  border-radius: 6px;
+  border: none;
+  min-width: 250px;
+  min-height: 30px;
+}
+.checkbox_style {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.submit_style {
+  margin-left: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 100px;
+  margin-top: 30px;
+}
+
+form > div > label {
+  color: aliceblue;
+  display: block;
+  margin-right: 80px;
+}
+
+/* End of  Add Button styles-------------------------------------------------------------- */
+
+/* view Details Styling----------------------------------- */
+.view_Details_style {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-left: 70px;
+  width: auto;
+  height: auto;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  text-align: center;
+}

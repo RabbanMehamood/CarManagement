@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="./homepage-style.css" />
   </head>
   <body>
-<div id="Home">
-        <div class="container">
-        <header class="header_style"> 
+    <div id="Home">
+      <div class="container">
+        <h1
+          style="margin: 10px; text-align: center; padding-top: 30px"
+          id="onLoadUserName"
+        ></h1>
+        <header class="header_style">
           <div class="logo-image">
-           <img src="AssetsHome/DrivoxeLogo.png" alt="homeimage" style="padding: 20px;"/>
+            <img
+              src="AssetsHome/DrivoxeLogo.png"
+              alt="homeimage"
+              style="padding: 20px"
+            />
           </div>
           <div class="header_nav">
-            <a href="">Service</a>
-            <a href="">Cars</a>
-            <a href="">Pricing</a>
-            <a href="">About</a>
+            <a href="#cars">Cars</a>
+            <a href="page3.html">Admin Section</a>
+            <a href="bookingsrecord.html">Bookings Record</a>
           </div>
           <div class="header_btn">
-            <a href="">Contact</a>
-            <button>Sign up</button>
+            <button id="bookbutton">Book</button>
+            <button onclick="removeCred()">Logout</button>
           </div>
         </header>
         <section class="section_hero">
@@ -51,15 +58,16 @@
               their car.
             </p>
             <div class="section_hero_right_category">
-              <button >Rent</button>
-              <button >Buy</button>
-              <button >Sell</button>
-              <button >Consult</button>
+              <button>Rent</button>
+              <button>Buy</button>
+              <button>Sell</button>
+              <button>Consult</button>
             </div>
           </div>
         </section>
-    <main >
-<section class="section_carCollection">
+      </div>
+      <main style="background-color: #feeaea">
+        <section id="cars" class="section_carCollection">
           <span>THE CARS</span>
           <h1>Our Impressive Fleet</h1>
           <div class="section_carCollection_row">
@@ -153,9 +161,175 @@
                 </div>
               </div>
             </div>
+            <div class="section_carCollection_row_col">
+              <div class="section_carCollection_row_col_img">
+                <img src="./AssetsHome/car2.png" alt="" />
+              </div>
+              <div class="section_carCollection_row_col_text">
+                <h2>Zephyr A4 Stratos</h2>
+                <div class="section_carCollection_row_col_option">
+                  <div class="section_carCollection_row_col_title">
+                    <p>Starting at</p>
+                    <h3>$79/day</h3>
+                  </div>
+                  <button>Rent</button>
+                </div>
+              </div>
+            </div>
+            <div class="section_carCollection_row_col">
+              <div class="section_carCollection_row_col_img">
+                <img src="./AssetsHome/car3.png" alt="" />
+              </div>
+              <div class="section_carCollection_row_col_text">
+                <h2>Aurora X5 Nebula</h2>
+                <div class="section_carCollection_row_col_option">
+                  <div class="section_carCollection_row_col_title">
+                    <p>Starting at</p>
+                    <h3>$99/day</h3>
+                  </div>
+                  <button>Rent</button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-    </main>
-  </div>
+      </main>
+      <!-- Book Button -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="times">&times;</span>
+          <h2 style="color: white">Car Rental Form</h2>
+          <form action="rentalForm" id="form" method="post">
+            <div>
+              <label for="rentalId">Rental ID :</label><br />
+              <input
+                type="text"
+                id="rentalId"
+                name="rentalId"
+                value=""
+                placeholder="Ex:001, 002, 003"
+                required
+              /><br /><br />
+            </div>
+            <div>
+              <label for="carModel">Car Model :</label><br />
+              <select
+                id="carModel"
+                name="Cartype"
+                style="width: 250px; height: 33px; border-radius: 10px"
+              >
+                <option value="Horizon Mirage Convertible">
+                  Horizon Mirage Convertible
+                </option>
+                <option value="Zephyr A4 Stratos">Zephyr A4 Stratos</option>
+                <option value="Aurora X5 Nebula">Aurora X5 Nebula</option>
+                <option value="Vanguard CX2 Convertible">
+                  Vanguard CX2 Convertible
+                </option>
+                <option value="Stellar Orion Hybrid">
+                  Stellar Orion Hybrid
+                </option>
+                <option value="Vanguard C-Class Coupe">
+                  Vanguard C-Class Coupe
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="mfdYear">Manufacturing Year:</label><br />
+              <input
+                type="number"
+                id="mfdYear"
+                name="mfdYear"
+                value="2001"
+              /><br /><br />
+            </div>
+
+            <div>
+              <label for="rentStartDate">Rent Start Date :</label><br />
+              <input
+                type="date"
+                id="rentStartDate"
+                name="rentStartDate"
+                required
+              /><br /><br />
+            </div>
+            <div>
+              <label for="rentEndDate">Rent End Date :</label><br />
+              <input
+                type="date"
+                id="rentEndDate"
+                name="rentEndDate"
+                required
+              /><br /><br />
+            </div>
+            <div>
+              <label for="customerName">Booked Customer Name :</label><br />
+              <input
+                type="text"
+                id="customerName"
+                name="customerName"
+                value=""
+                required
+              /><br /><br />
+            </div>
+            <div>
+              <label for="destinationPlace">Destination Place Name:</label
+              ><br />
+              <input
+                type="text"
+                id="destinationPlace"
+                name="destinationPlace"
+                value=""
+                required
+              /><br /><br />
+            </div>
+            <div>
+              <label for="startPlace">Start Place Name:</label><br />
+              <input
+                type="text"
+                id="startPlace"
+                name="startPlace"
+                value=""
+                required
+              /><br /><br />
+            </div>
+            <div class="checkbox_style">
+              <div style="display: flex; justify-content: space-between">
+                <input
+                  type="checkbox"
+                  id="isSinglePassenger"
+                  name="isSinglePassenger"
+                />
+                <label for="isSinglePassenger" style="color: white"
+                  >Is Single Passenger (including driver):</label
+                >
+              </div>
+              <div style="display: flex; justify-content: space-between">
+                <label for="fuelType" style="color: white">Fuel Type:</label>
+                <select id="fuelType" name="fuelType">
+                  <option value="petrol">Petrol</option>
+                  <option value="diesel">Diesel</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label for="bookedBy">Booked by (logged in username):</label>
+              <input
+                type="text"
+                id="bookedBy"
+                name="bookedBy"
+                value=""
+              /><br /><br />
+            </div>
+
+            <button class="submit_style" type="submit" value="Submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      <script src="./homeindex.js"></script>
+      <!-- closing of Book Button  -->
+    </div>
   </body>
 </html>

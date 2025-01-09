@@ -263,7 +263,7 @@
               /><br /><br />
             </div>
             <div>
-              <label for="customerName">Booked Customer Name :</label><br />
+              <label for="customerName">Customer Name :</label><br />
               <input
                 type="text"
                 id="customerName"
@@ -273,8 +273,7 @@
               /><br /><br />
             </div>
             <div>
-              <label for="destinationPlace">Destination Place Name:</label
-              ><br />
+              <label for="destinationPlace">Destination Place:</label><br />
               <input
                 type="text"
                 id="destinationPlace"
@@ -284,7 +283,7 @@
               /><br /><br />
             </div>
             <div>
-              <label for="startPlace">Start Place Name:</label><br />
+              <label for="startPlace">Start Place:</label><br />
               <input
                 type="text"
                 id="startPlace"
@@ -293,27 +292,31 @@
                 required
               /><br /><br />
             </div>
-            <div class="checkbox_style">
-              <div style="display: flex; justify-content: space-between">
-                <input
-                  type="checkbox"
-                  id="isSinglePassenger"
-                  name="isSinglePassenger"
-                />
-                <label for="isSinglePassenger" style="color: white"
-                  >Is Single Passenger (including driver):</label
-                >
-              </div>
-              <div style="display: flex; justify-content: space-between">
-                <label for="fuelType" style="color: white">Fuel Type:</label>
-                <select id="fuelType" name="fuelType">
-                  <option value="petrol">Petrol</option>
-                  <option value="diesel">Diesel</option>
-                </select>
-              </div>
+
+            <div>
+              <label for="isSinglePassenger" style="color: white"
+                >Is Single Passenger:</label
+              >
+              <input
+                type="checkbox"
+                id="isSinglePassenger"
+                name="isSinglePassenger"
+              />
             </div>
             <div>
-              <label for="bookedBy">Booked by (logged in username):</label>
+              <label for="fuelType" style="color: white">Fuel Type:</label>
+              <select
+                id="fuelType"
+                name="fuelType"
+                style="width: 250px; height: 33px; border-radius: 10px"
+              >
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="bookedBy">Booked by:</label>
               <input
                 type="text"
                 id="bookedBy"

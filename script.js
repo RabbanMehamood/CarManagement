@@ -21,7 +21,7 @@ function validateLoginForm(event) {
     }
   }
   if (password.length < 8) {
-    document.getElementById("errorMsg").innerHTML =
+    document.getElementById("loginerrorMsg").innerHTML =
       "Your password has more than 8 characters";
   } else if (!userExists) {
     alert("User not found. Please register first"); // Ask to user to register for getting login details
@@ -43,13 +43,14 @@ function validateSignupForm(event) {
   console.log(name, mail, password);
 
   if (mail == "" || name == "" || password == "") {
-    document.getElementById("errorMsg").innerHTML =
+    document.getElementById("registererrorMsg").innerHTML =
       "Please fill the required fields";
   } else if (password.length < 8) {
-    document.getElementById("errorMsg").innerHTML =
+    document.getElementById("registererrorMsg").innerHTML =
       "Your password must include at least 8 characters";
   } else if (password !== confirmPassword) {
-    document.getElementById("errorMsg").innerHTML = "Passwords do not match";
+    document.getElementById("passwordmatcherror").innerHTML =
+      "Passwords do not match";
   } else {
     // Check if user already exists
     var users = JSON.parse(localStorage.getItem("users")) || [];
@@ -60,13 +61,13 @@ function validateSignupForm(event) {
         break;
       }
     }
-
     if (userExists) {
       alert("User already exists. Please login.");
     } else {
       // Store new user in localStorage
       users.push({ name: name, email: mail, password: password });
       localStorage.setItem("users", JSON.stringify(users));
+      window.location.reload();
       alert("Enter Username and password in Login section to login");
     }
   }

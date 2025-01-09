@@ -130,14 +130,10 @@
        -             <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
                     <input  id="logPassword" class="name-field" type="password" placeholder="Password" name="usrnm" required />
                   </div>
-                  <div style="display: flex; align-items: center;">
-                  <input type="checkbox" id="rememberme" style="width: 20px; height: 20px; background-color: #77badb;" required />
-                  <label for="rememberme" style="color: white;">Remember Me</label>
-                  </div>
                   <div>
                     <button type="submit" value="login" class="login-button">LOGIN</button>
-                    <p id="errorMsg"></p>
-                    <p id="toregisterdiv" style="color: white;">If not Registered, click to Register -></p>
+                    <p id="loginerrorMsg"></p>
+                    <p id="toregisterdiv" style="color: rgb(23, 56, 58);">If Not Registered, Click to Register -></p>
                   </div>
         </form>
         </div>
@@ -164,6 +160,11 @@
                         <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
                         <input id="signConfirmPassword" class="name-field" type="password" placeholder="Confirm Password" name="usrnm" required />
                       </div>
+                      <div>
+                        <p id="registererrorMsg"></p>
+                      </div>
+                      <span><p id="passwordmatcherror"></p></span>
+                      
                       <div>
                         <button type="submit" class="login-button">CREATE ACCOUNT</button>
                         <span></span><p id="tologinDiv" style="color: white;">Already have an account? Click to Login </p>

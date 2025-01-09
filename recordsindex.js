@@ -46,12 +46,9 @@ function saveToLocalStorage() {
 // Display table functionality(working)
 function displayTable(rentalData) {
   rentalTable.innerHTML = "";
-  if (rentalData == []) {
-    noRecordMessage.innerHTML = `<h1>No Records To Display</h1>`;
-  }
+
   rentalData.forEach((rental, index) => {
     const row = document.createElement("tr");
-    // let row = rentalTable.insertRow();
     row.innerHTML = `
             <td>${rental.rentalId}</td>
             <td>${rental.carModel}</td>
@@ -74,6 +71,7 @@ function displayTable(rentalData) {
 function deleteRental(index) {
   rentalData.splice(index, 1);
   saveToLocalStorage();
+  window.location.reload();
   displayTable();
 }
 
@@ -119,9 +117,10 @@ window.onload = function () {
   if (rentalData.length > 0) {
     displayTable(rentalData);
   } else {
-    displayTable(rentalData); // function used for displaying mock data previosly written
-    closeModal();
-    openModal();
+    // displayTable(rentalData);
+    rentalTable.innerHTML = `<h1 style="text-align:center;">No Records To Display</h1>`; // function used for displaying mock data previosly written if it exist
+    // closeModal();
+    // openModal();
   }
 };
 
@@ -142,7 +141,7 @@ closeButton.addEventListener("click", function () {
 
 const rentalForm = document.getElementById("form");
 
-// Handle form submission
+//getting values from the from
 rentalForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -152,7 +151,7 @@ rentalForm.addEventListener("submit", function (e) {
 
   let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
 
-  // Get form data
+  //
   const rental = {
     rentalId: document.getElementById("rentalId").value,
     carModel: document.getElementById("carModel").value,
@@ -166,9 +165,14 @@ rentalForm.addEventListener("submit", function (e) {
     fuelType: document.getElementById("fuelType").value,
     bookedBy: document.getElementById("bookedBy").value,
   };
+  if (new Date(rental.rentStartDate) > new Date(rental.rentEndDate)) {
+    alert("Start date cannot be after the end date.");
+    return;
+  }
 
   console.log(rental);
   rentalData.push(rental);
+  console.log(rentalData);
   saveToLocalStorage();
   alert("Your Booking is Confirmed, view in Bookings Record Section");
   window.location.href = "./bookingsrecord.html";
@@ -190,9 +194,6 @@ searchIcon.addEventListener("click", function () {
   } else {
     const filteredData = rentalData.filter(
       (rental) => rental.rentalId === searchValue
-      // Filter rentals by rentalId (or any other field)
-      // const filteredData = rentalData.find((rental) =>
-      //   rental.searchValue
     );
     console.log(filteredData, searchValue);
     // Update the table with the filtered data but not changing original table in the local storage

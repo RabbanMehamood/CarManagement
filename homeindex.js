@@ -38,7 +38,10 @@ rentalForm.addEventListener("submit", function (e) {
     fuelType: document.getElementById("fuelType").value,
     bookedBy: document.getElementById("bookedBy").value,
   };
-
+  if (new Date(rental.rentStartDate) > new Date(rental.rentEndDate)) {
+    alert("Start date cannot be after the end date.");
+    return;
+  }
   console.log(rental);
   rentalData.push(rental);
   saveToLocalStorage();

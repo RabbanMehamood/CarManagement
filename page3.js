@@ -1,9 +1,9 @@
 let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
 
-// below function is displaying cards
+// display cards.
 function displayRentalCards() {
   const rentalCardsContainer = document.getElementById("rentalCardsContainer");
-  rentalCardsContainer.innerHTML = ""; // Clear previous cards
+  rentalCardsContainer.innerHTML = "";
 
   // Retrieve rental data from local storage
   const rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
@@ -13,7 +13,7 @@ function displayRentalCards() {
     card.classList.add("card");
 
     card.innerHTML = `
-      <img src="./AssetsHome/car1.png" alt="Car Image"> <!-- Add your car image here -->
+      <img src="./AssetsHome/car1.png" alt="Car Image">
       <h3>${rental.carModel}</h3>
       <p>Start Date: ${rental.rentStartDate}</p>
       <p>End Date: ${rental.rentEndDate}</p>
@@ -40,17 +40,15 @@ function deleteRental(index) {
   // Checking if the credentials are correct
   if (username === "Admin" && password === "Admin") {
     const modifiedRentalData =
-      JSON.parse(localStorage.getItem("rentals")) || [];
-    modifiedRentalData.splice(index, 1); // removes and modifies the original array.
+      JSON.parse(localStorage.getItem("rentalData")) || [];
+    modifiedRentalData.splice(index, 1); // working
     console.log(modifiedRentalData);
-    // Save the updated rental data back to local storage
+    // Saveing to  local storage
     saveToLocalStorage(modifiedRentalData);
     displayRentalCards();
-    // Re-render the rental cards
   } else {
     alert("Only Admin can delete rental items.");
   }
 }
 
-// Initial call to display the rental cards when the page loads
 displayRentalCards();

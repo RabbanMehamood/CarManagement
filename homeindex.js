@@ -14,7 +14,7 @@ closeButton.addEventListener("click", function () {
 
 const rentalForm = document.getElementById("form");
 
-// Handle form submission
+// Taking Values from the pop up form.
 rentalForm.addEventListener("submit", function (e) {
   e.preventDefault();
 

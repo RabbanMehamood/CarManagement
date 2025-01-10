@@ -1,17 +1,23 @@
+body {
+  font-family: "Gill Sans", sans-serif;
+}
 .container {
   background-image: url("./AssetsHome/heroImage.png");
   background-size: cover;
+  width: auto;
+  overflow-y: hidden;
+  overflow-x: clip !important;
 }
-#Home {
-  width: 100%;
-}
+
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .header_style {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -27,11 +33,13 @@
 
 .header_btn {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   max-width: 206px;
+  flex-direction: row;
+  margin: 40px;
 }
 
 .header_nav > a {
@@ -55,6 +63,12 @@
   border: 2px solid rgb(220, 31, 31);
   margin: 13px;
 }
+.header_btn > button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
+}
+
 .header_btn > a {
   font-family: sans-serif;
   font-size: 16px;
@@ -66,26 +80,16 @@
   width: 100%;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 72px;
   position: relative;
 }
-.section_hero_image {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-.section_hero_image > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 .section_hero_left {
   width: 100%;
   max-width: 414px;
+  margin: 50px;
 }
 .section_hero_left > h1 {
   font-size: 56px;
@@ -122,6 +126,7 @@
 .section_hero_left > button:hover {
   background-color: white;
   color: red;
+  cursor: pointer;
 }
 .section_hero > .section_hero_image {
   display: none;
@@ -143,6 +148,7 @@
 .section_hero_right {
   width: 100%;
   max-width: 300px;
+  margin: 20px 0px 30px 30px;
 }
 .section_hero_right_img {
   display: flex;
@@ -195,7 +201,11 @@
   background-color: black;
   color: white;
 }
-
+.section_hero_right_category > button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
+}
 .section_carCollection {
   display: inline;
   /* height: 1200px; */
@@ -305,19 +315,14 @@
   font-family: sans-serif;
   font-weight: 700;
 }
+.section_carCollection_row_col_option > button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
+}
 
 /* Modal styles */
 .modal {
-  /* display: none;
-  position: fixed;
-  align-content: center;
-  align-content: center;
-  top: 0;
-  width: -webkit-fill-available;
-  height: max-content;
-  
-  border-radius: 20px; */
-
   text-align: center;
   display: none;
   position: fixed;
@@ -345,9 +350,10 @@
 .close {
   color: #ffffff;
   float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   font-size: 28px;
-  font-weight: bold;
-  align-self: flex-end;
 }
 
 /* styling Form */
@@ -389,4 +395,20 @@ form > div > label {
   color: aliceblue;
   display: block;
   margin-right: 80px;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .modal {
+    text-align: center;
+    display: none;
+    position: fixed;
+    overflow: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    color: aliceblue;
+    border-radius: 15px;
+    background-color: darkslategrey;
+  }
 }

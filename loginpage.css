@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #4da3d2;
+  font-family: "Gill Sans", sans-serif;
+}
+h2 {
+  color: azure;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.loginstyle {
+  padding: 20px;
+  margin-bottom: 20px;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.registerstyle {
+  padding: 10px;
+  width: auto;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  height: auto;
+}
+.name-field {
+  width: auto;
+  display: inline-block;
+  font-family: sans-serif;
+  height: auto;
+  border: none;
+  padding-left: 10px;
+  background-color: white;
+  color: black;
+}
+.icon {
+  width: 45px;
+  height: 51px;
+  border: none;
+}
+.username-div {
+  display: flex;
+  margin-bottom: 30px;
+}
+::placeholder {
+  color: #77badb;
+  font-size: medium;
+  margin-left: 10px;
+}
+
+.login-button {
+  background-color: #2479b9;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  width: 180px;
+  height: 50px;
+  border-radius: 40px;
+  border: none;
+  margin-top: 20px;
+}
+.login-image {
+  border-radius: 100px;
+  height: 70px;
+  width: 70px;
+}
+#loginSection {
+  display: block;
+  overflow: hidden;
+}
+#registrationSection {
+  display: none;
+}

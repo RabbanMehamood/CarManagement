@@ -1,5 +1,5 @@
 function validateLoginForm(event) {
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault(); // Prevent form doing default things.
 
   var name = document.getElementById("logName").value;
   var password = document.getElementById("logPassword").value;

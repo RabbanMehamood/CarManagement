@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page3</title>
     <style>
+     body{
+      background-color: cadetblue;
+      font-family: sans-serif;
+     }
       .nav_top {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 10px;
+      display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
       }
       .cards_container {
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
+        
       }
       .card {
+        background-color: white;
         width: 300px;
         border: 1px solid #ccc;
         padding: 20px;
@@ -41,21 +49,29 @@
         cursor: pointer;
         border-radius: 5px;
       }
-      .card button:hover {
-        background-color: darkred;
+      .card > button:hover {
+        background-color: rgb(136, 108, 108);
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="nav_top">
-        <a href="./homepage.html"
-          ><img src="./AssetsHome/DrivoxeLogo.png" alt="logopng"
-        /></a>
-        <h1 style="padding: 50px">Reservation Details</h1>
+        <div>
+          <a href="./homepage.html" 
+            ><img src="./AssetsHome/DrivoxeLogo.png" alt="logopng"
+          style="border: 2px solid black;"/></a>
+        </div>
+        <div>
+          <h1 style="margin-right:80px;">Reservation Details</h1>
+        </div>
+        <div>
+            <a href="homepage.html" style="text-decoration: none;"> &#x21E6;  Homepage </a>
+        </div>
       </div>
       <div class="cards_container" id="rentalCardsContainer"></div>
     </div>
+  </div>
     <script src="page3.js"></script>
   </body>
 </html>

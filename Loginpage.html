@@ -4,113 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoginPage Car</title>
-    <style>
-        * {
-    box-sizing: border-box;
-}
-        body {
-          background-color: #4da3d2;
-          font-family: sans-serif;
-        }
-        h2{
-            color:azure
-        }
-        .main{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-            padding-top: 50px;
-        }
-
-        
-        .loginstyle{ 
-            padding: 20px;
-            margin-bottom:20px ;
-            width: auto;
-            height:auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.28);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            
-            
-            
-}
-
-        .registerstyle{
-            padding: 10px;
-            width: auto;
-            min-width: 33%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.28);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            /* border: 1px solid rgba(255, 255, 255, 0.3); */
-            height:auto;     
-                        
-        }
-        .name-field{
-            min-width: 350px;
-            display: block;
-            height: 51px;
-            border: none;
-            padding-left: 10px;
-            background-color:white; 
-            color:black;
-              
-        }
-        .icon{
-            width: 45px;
-            height: 51px;
-            border: none;
-        }
-        .username-div{
-            display: flex;
-            margin-bottom: 30px;
-        }
-        ::placeholder{
-            color: #77badb;
-            font-size: medium;
-            margin-left: 10px;
-        }
-
-        .login-button{
-            background-color: #2479b9; color: white; text-align:center;
-            width: 180px; height: 50px;
-            border-radius: 40px;
-            border: none;
-            margin-top: 20px;
-
-        }
-        .login-image{  
-            border-radius: 100px;
-            height: 70px;
-            width: 70px;
-
-        }
-        #loginSection{
-            display: block;
-        }
-        #registrationSection{
-            display: none;
-        }
-
-        </style>
-        
+    <link rel="stylesheet" href="./loginpage.css" />
 </head>
 <body>
     
@@ -127,13 +21,13 @@
                   </div>
 
                   <div class="username-div">
-       -             <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
+                   <img src="./Assets/passwordicon.png" alt="userIcon" class="icon">
                     <input  id="logPassword" class="name-field" type="password" placeholder="Password" name="usrnm" required />
                   </div>
                   <div>
                     <button type="submit" value="login" class="login-button">LOGIN</button>
-                    <p id="loginerrorMsg"></p>
-                    <p id="toregisterdiv" style="color: rgb(23, 56, 58);">If Not Registered, Click to Register -></p>
+                    <p id="loginerrorMsg" ></p>
+                    <p id="toregisterdiv" style="color: rgb(23, 56, 58); cursor: pointer;">If Not Registered, Click to Register -></p>
                   </div>
         </form>
         </div>
@@ -167,7 +61,7 @@
                       
                       <div>
                         <button type="submit" class="login-button">CREATE ACCOUNT</button>
-                        <span></span><p id="tologinDiv" style="color: white;">Already have an account? Click to Login </p>
+                        <span></span><p id="tologinDiv" style="color: white; cursor: pointer;">Already have an account? Click to Login </p>
                         </span>
                       </div>
             </form>

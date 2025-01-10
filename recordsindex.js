@@ -18,7 +18,7 @@ function closeModal() {
 function openModal() {
   myModal1.style.display = "block";
 }
-// Open view modal (working when clicked in vew Details)
+// Open view modal (working when clicked in view Details)
 function openViewModal(rental) {
   let details = `<p><strong>Rental ID:</strong> ${rental.rentalId}</p>
                    <p><strong>Car Model:</strong> ${rental.carModel}</p>
@@ -58,9 +58,9 @@ function displayTable(rentalData) {
             <td>${rental.rentEndDate}</td>
             <td>${rental.customerName}</td>
             <td>
-                <button onclick="editRental(${index})">Edit</button>
-                <button onclick="deleteRental(${index})">Delete</button>
-                <button onclick="openViewModal(rentalData[${index}])">View</button>
+                <button style="cursor:pointer;" onclick="editRental(${index})">Edit</button>
+                <button style="cursor:pointer;" onclick="deleteRental(${index})">Delete</button>
+                <button style="cursor:pointer;" onclick="openViewModal(rentalData[${index}])">View</button>
             </td>
         `;
     rentalTable.appendChild(row);
@@ -92,9 +92,11 @@ window.onclick = function (event) {
 
 // Editing function.
 function editRental(index) {
+  openModal();
   const rental = rentalData[index];
 
   //  form gets filled with previous values.
+
   document.getElementById("rentalId").value = rental.rentalId;
   document.getElementById("carModel").value = rental.carModel;
   document.getElementById("mfdYear").value = rental.mfdYear;
@@ -109,7 +111,6 @@ function editRental(index) {
   document.getElementById("bookedBy").value = rental.bookedBy;
   rentalData.splice(index, 1);
   saveToLocalStorage();
-  openModal();
 }
 
 // Loading initial data in tables from local storage
@@ -118,9 +119,7 @@ window.onload = function () {
     displayTable(rentalData);
   } else {
     // displayTable(rentalData);
-    rentalTable.innerHTML = `<h1 style="text-align:center;">No Records To Display</h1>`; // function used for displaying mock data previosly written if it exist
-    // closeModal();
-    // openModal();
+    rentalTable.innerHTML = `<h1 style="text-align:center;">No Records To Display</h1>`; // function used for displaying mock data previosly
   }
 };
 
@@ -135,8 +134,10 @@ bookButton.addEventListener("click", function () {
 });
 
 closeButton.addEventListener("click", function () {
+  console.log("closed pop up");
   myModalEl.style.display = "none";
 });
+
 // Start of Script for the Popup form
 
 const rentalForm = document.getElementById("form");

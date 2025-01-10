@@ -76,7 +76,7 @@
                 <img src="./AssetsHome/car1.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Horizon Mirage Convertible</h2>
+                <h3>Horizon Mirage Convertible</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -91,7 +91,7 @@
                 <img src="./AssetsHome/car2.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Zephyr A4 Stratos</h2>
+                <h3>Zephyr A4 Stratos</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -106,7 +106,7 @@
                 <img src="./AssetsHome/car3.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Aurora X5 Nebula</h2>
+                <h3>Aurora X5 Nebula</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -121,7 +121,7 @@
                 <img src="./AssetsHome/car4.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Vanguard CX2 Convertible</h2>
+                <h3>Vanguard CX2 Convertible</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -136,7 +136,7 @@
                 <img src="./AssetsHome/car5.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Stellar Orion Hybrid</h2>
+                <h3>Stellar Orion Hybrid</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -151,7 +151,7 @@
                 <img src="./AssetsHome/car6.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Vanguard C-Class Coupe</h2>
+                <h3>Vanguard C-Class Coupe</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -166,7 +166,7 @@
                 <img src="./AssetsHome/car2.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Zephyr A4 Stratos</h2>
+                <h3>Zephyr A4 Stratos</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -181,7 +181,7 @@
                 <img src="./AssetsHome/car3.png" alt="" />
               </div>
               <div class="section_carCollection_row_col_text">
-                <h2>Aurora X5 Nebula</h2>
+                <h3>Aurora X5 Nebula</h3>
                 <div class="section_carCollection_row_col_option">
                   <div class="section_carCollection_row_col_title">
                     <p>Starting at</p>
@@ -196,139 +196,143 @@
       </main>
       <!-- Book Button -->
       <div id="myModal" class="modal">
+        <span class="close" id="times">&times;</span>
         <div class="modal-content">
-          <span class="close" id="times">&times;</span>
-          <h2 style="color: white">Car Rental Form</h2>
-          <form action="rentalForm" id="form" method="post">
-            <div>
-              <label for="rentalId">Rental ID :</label><br />
-              <input
-                type="text"
-                id="rentalId"
-                name="rentalId"
-                value=""
-                placeholder="Ex:001, 002, 003"
-                required
-              /><br /><br />
-            </div>
-            <div>
-              <label for="carModel">Car Model :</label><br />
-              <select
-                id="carModel"
-                name="Cartype"
-                style="width: 250px; height: 33px; border-radius: 10px"
-              >
-                <option value="Horizon Mirage Convertible">
-                  Horizon Mirage Convertible
-                </option>
-                <option value="Zephyr A4 Stratos">Zephyr A4 Stratos</option>
-                <option value="Aurora X5 Nebula">Aurora X5 Nebula</option>
-                <option value="Vanguard CX2 Convertible">
-                  Vanguard CX2 Convertible
-                </option>
-                <option value="Stellar Orion Hybrid">
-                  Stellar Orion Hybrid
-                </option>
-                <option value="Vanguard C-Class Coupe">
-                  Vanguard C-Class Coupe
-                </option>
-              </select>
-            </div>
-            <div>
-              <label for="mfdYear">Manufacturing Year:</label><br />
-              <input
-                type="number"
-                id="mfdYear"
-                name="mfdYear"
-                value="2001"
-              /><br /><br />
-            </div>
+          <div>
+            <h3 style="color: white; text-align: center">Car Rental Form</h3>
+          </div>
+          <div>
+            <form action="rentalForm" id="form" method="post">
+              <div>
+                <label for="rentalId">Rental ID :</label><br />
+                <input
+                  type="text"
+                  id="rentalId"
+                  name="rentalId"
+                  value=""
+                  placeholder="Ex:001, 002, 003"
+                  required
+                /><br /><br />
+              </div>
+              <div>
+                <label for="carModel">Car Model :</label><br />
+                <select
+                  id="carModel"
+                  name="Cartype"
+                  style="width: 250px; height: 33px; border-radius: 10px"
+                >
+                  <option value="Horizon Mirage Convertible">
+                    Horizon Mirage Convertible
+                  </option>
+                  <option value="Zephyr A4 Stratos">Zephyr A4 Stratos</option>
+                  <option value="Aurora X5 Nebula">Aurora X5 Nebula</option>
+                  <option value="Vanguard CX2 Convertible">
+                    Vanguard CX2 Convertible
+                  </option>
+                  <option value="Stellar Orion Hybrid">
+                    Stellar Orion Hybrid
+                  </option>
+                  <option value="Vanguard C-Class Coupe">
+                    Vanguard C-Class Coupe
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label for="mfdYear">Manufacturing Year:</label><br />
+                <input
+                  type="number"
+                  id="mfdYear"
+                  name="mfdYear"
+                  value=""
+                /><br /><br />
+              </div>
 
-            <div>
-              <label for="rentStartDate">Rent Start Date :</label><br />
-              <input
-                type="date"
-                id="rentStartDate"
-                name="rentStartDate"
-                required
-              /><br /><br />
-            </div>
-            <div>
-              <label for="rentEndDate">Rent End Date :</label><br />
-              <input
-                type="date"
-                id="rentEndDate"
-                name="rentEndDate"
-                required
-              /><br /><br />
-            </div>
-            <div>
-              <label for="customerName">Customer Name :</label><br />
-              <input
-                type="text"
-                id="customerName"
-                name="customerName"
-                value=""
-                required
-              /><br /><br />
-            </div>
-            <div>
-              <label for="destinationPlace">Destination Place:</label><br />
-              <input
-                type="text"
-                id="destinationPlace"
-                name="destinationPlace"
-                value=""
-                required
-              /><br /><br />
-            </div>
-            <div>
-              <label for="startPlace">Start Place:</label><br />
-              <input
-                type="text"
-                id="startPlace"
-                name="startPlace"
-                value=""
-                required
-              /><br /><br />
-            </div>
+              <div>
+                <label for="rentStartDate">Rent Start Date :</label><br />
+                <input
+                  type="date"
+                  id="rentStartDate"
+                  name="rentStartDate"
+                  required
+                /><br /><br />
+              </div>
+              <div>
+                <label for="rentEndDate">Rent End Date :</label><br />
+                <input
+                  type="date"
+                  id="rentEndDate"
+                  name="rentEndDate"
+                  required
+                /><br /><br />
+              </div>
+              <div>
+                <label for="customerName">Customer Name :</label><br />
+                <input
+                  type="text"
+                  id="customerName"
+                  name="customerName"
+                  value=""
+                  required
+                /><br /><br />
+              </div>
+              <div>
+                <label for="destinationPlace">Destination Place:</label><br />
+                <input
+                  type="text"
+                  id="destinationPlace"
+                  name="destinationPlace"
+                  value=""
+                  required
+                /><br /><br />
+              </div>
+              <div>
+                <label for="startPlace">Start Place:</label><br />
+                <input
+                  type="text"
+                  id="startPlace"
+                  name="startPlace"
+                  value=""
+                  required
+                /><br /><br />
+              </div>
 
-            <div>
-              <label for="isSinglePassenger" style="color: white"
-                >Is Single Passenger:</label
-              >
-              <input
-                type="checkbox"
-                id="isSinglePassenger"
-                name="isSinglePassenger"
-              />
-            </div>
-            <div>
-              <label for="fuelType" style="color: white">Fuel Type:</label>
-              <select
-                id="fuelType"
-                name="fuelType"
-                style="width: 250px; height: 33px; border-radius: 10px"
-              >
-                <option value="petrol">Petrol</option>
-                <option value="diesel">Diesel</option>
-              </select>
-            </div>
+              <div>
+                <label for="isSinglePassenger" style="color: white"
+                  >Is Single Passenger:</label
+                >
+                <input
+                  type="checkbox"
+                  id="isSinglePassenger"
+                  name="isSinglePassenger"
+                />
+              </div>
+              <div>
+                <label for="fuelType" style="color: white">Fuel Type:</label>
+                <select
+                  id="fuelType"
+                  name="fuelType"
+                  style="width: 250px; height: 33px; border-radius: 10px"
+                >
+                  <option value="petrol">Petrol</option>
+                  <option value="diesel">Diesel</option>
+                </select>
+              </div>
 
-            <div>
-              <label for="bookedBy">Booked by:</label>
-              <input
-                type="text"
-                id="bookedBy"
-                name="bookedBy"
-                value=""
-              /><br /><br />
-            </div>
+              <div>
+                <label for="bookedBy">Booked by:</label>
+                <input
+                  type="text"
+                  id="bookedBy"
+                  name="bookedBy"
+                  value=""
+                /><br /><br />
+              </div>
 
-            <button class="submit_style" type="submit" value="Submit">
-              Submit
-            </button>
-          </form>
+              <button class="submit_style" type="submit" value="Submit">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
       <script src="./homeindex.js"></script>

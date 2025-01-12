@@ -1,5 +1,40 @@
 let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
 console.log(rentalData);
+// ---------------------------------------------------------------------------------saving to Local Storage(working)
+function saveToLocalStorage(rentalData) {
+  localStorage.setItem("rentalData", JSON.stringify(rentalData));
+}
+// Date Validation Code
+onStartRentDate();
+onStartEndDate();
+function onStartRentDate() {
+  var date = new Date();
+
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = year + "-" + month + "-" + day;
+  document.getElementById("rentStartDate").value = today;
+  document.getElementById("rentStartDate").setAttribute("min", today);
+}
+
+function onStartEndDate() {
+  var date = new Date();
+
+  var day = date.getDate() + 1;
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = year + "-" + month + "-" + day;
+  document.getElementById("rentEndDate").setAttribute("min", today);
+}
 
 const rentalTable = document
   .getElementById("rentalTable")
@@ -8,16 +43,9 @@ const noRecordMessage = document.getElementById("noRecord");
 const viewModal = document.getElementById("viewModal");
 const viewClose = document.getElementById("viewClose");
 const viewDetails = document.getElementById("viewDetails");
-const myModal = document.getElementById("myModal");
-const times = document.getElementById("times");
+const myModal2 = document.getElementById("myModal2");
+const times2 = document.getElementById("times2");
 
-function closeModal() {
-  myModal.style.display = "none";
-}
-
-function openModal() {
-  myModal1.style.display = "block";
-}
 // Open view modal (working when clicked in view Details)
 function openViewModal(rental) {
   let details = `<p><strong>Rental ID:</strong> ${rental.rentalId}</p>
@@ -37,10 +65,7 @@ function openViewModal(rental) {
   viewDetails.innerHTML = details;
   viewModal.style.display = "block";
 }
-// ---------------------------------------------------------------------------------saving to Local Storage(working)
-function saveToLocalStorage() {
-  localStorage.setItem("rentalData", JSON.stringify(rentalData));
-}
+
 // ---------------------------------------------------------------------------------Main Function for Edit,
 
 // Display table functionality(working)
@@ -58,7 +83,7 @@ function displayTable(rentalData) {
             <td>${rental.rentEndDate}</td>
             <td>${rental.customerName}</td>
             <td>
-                <button style="cursor:pointer;" onclick="editRental(${index})">Edit</button>
+                <button style="cursor:pointer;" onclick="editRental(rentalData[${index}], ${index})">Edit</button>
                 <button style="cursor:pointer;" onclick="deleteRental(${index})">Delete</button>
                 <button style="cursor:pointer;" onclick="openViewModal(rentalData[${index}])">View</button>
             </td>
@@ -66,13 +91,13 @@ function displayTable(rentalData) {
     rentalTable.appendChild(row);
   });
 }
+// Popup functions
+times2.addEventListener("click", function () {
+  myModal2.style.display = "none";
+});
 
-// Delete rental(working)
-function deleteRental(index) {
-  rentalData.splice(index, 1);
-  saveToLocalStorage();
-  window.location.reload();
-  displayTable();
+function openModal() {
+  myModal2.style.display = "block";
 }
 
 // Close view modal
@@ -80,37 +105,119 @@ viewClose.onclick = function () {
   viewModal.style.display = "none";
 };
 
+// Delete rental(working)
+function deleteRental(index) {
+  rentalData.splice(index, 1);
+  saveToLocalStorage(rentalData);
+  window.location.reload();
+  displayTable();
+}
+
 // Close modal when clicking outside of the modal NOt working, work on it
-window.onclick = function (event) {
-  if (event.target == myModal) {
-    closeModal();
-  }
-  if (event.target == viewModal) {
-    viewModal.style.display = "none";
-  }
-};
+// window.onclick = function (event) {
+//   if (event.target == myModal) {
+//     closeModal();
+//   }
+//   if (event.target == viewModal) {
+//     viewModal.style.display = "none";
+//   }
+// };
 
 // Editing function.
-function editRental(index) {
+// function editRental(index, indexValue) {
+//   let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
+//   console.log(rentalData[indexValue]);
+//   openModal();
+//   //  form gets filled with previous values.
+//   let rentalid = (document.getElementById("rentalId2").value = index.rentalId);
+//   document.getElementById("rentalId2").disabled = true;
+//   let carmodel = (document.getElementById("carModel2").value = index.carModel);
+//   let mfdyear = (document.getElementById("mfdYear2").value = index.mfdYear);
+//   let startdate = (document.getElementById("rentStartDate2").value =
+//     index.rentStartDate);
+//   let enddate = (document.getElementById("rentEndDate2").value =
+//     index.rentEndDate);
+//   let customername = (document.getElementById("customerName2").value =
+//     index.customerName);
+//   let desplace = (document.getElementById("destinationPlace2").value =
+//     index.destinationPlace);
+//   let startplace = (document.getElementById("startPlace2").value =
+//     index.startPlace);
+//   let issingle = (document.getElementById("isSinglePassenger2").checked =
+//     index.isSinglePassenger);
+//   let fueltype = (document.getElementById("fuelType2").value = index.fuelType);
+//   let bookedby = (document.getElementById("bookedBy2").value = index.bookedBy);
+//   let modifiedObj = {
+//     rentalId: rentalid,
+//     carModel: carmodel,
+//     customerName: customername,
+//     destinationPlace: desplace,
+//     fuelType: fueltype,
+//     isSinglePassenger: issingle,
+//     mfdYear: mfdyear,
+//     rentEndDate: enddate,
+//     rentStartDate: startdate,
+//     startPlace: startplace,
+//     bookedBy: bookedby,
+//   };
+//   console.log(modifiedObj);
+//   rentalData.splice(indexValue, 1, modifiedObj);
+//   saveToLocalStorage(rentalData);
+// }
+function editRental(index, indexValue) {
+  let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
   openModal();
-  const rental = rentalData[index];
 
-  //  form gets filled with previous values.
+  // Fill the form with existing values
+  document.getElementById("rentalId2").value = index.rentalId;
+  document.getElementById("rentalId2").disabled = true; // Disable editing of rental ID
+  document.getElementById("carModel2").value = index.carModel;
+  document.getElementById("mfdYear2").value = index.mfdYear;
+  document.getElementById("rentStartDate2").value = index.rentStartDate;
+  document.getElementById("rentEndDate2").value = index.rentEndDate;
+  document.getElementById("customerName2").value = index.customerName;
+  document.getElementById("destinationPlace2").value = index.destinationPlace;
+  document.getElementById("startPlace2").value = index.startPlace;
+  document.getElementById("isSinglePassenger2").checked =
+    index.isSinglePassenger;
+  document.getElementById("fuelType2").value = index.fuelType;
+  document.getElementById("bookedBy2").value = index.bookedBy;
 
-  document.getElementById("rentalId").value = rental.rentalId;
-  document.getElementById("carModel").value = rental.carModel;
-  document.getElementById("mfdYear").value = rental.mfdYear;
-  document.getElementById("rentStartDate").value = rental.rentStartDate;
-  document.getElementById("rentEndDate").value = rental.rentEndDate;
-  document.getElementById("customerName").value = rental.customerName;
-  document.getElementById("destinationPlace").value = rental.destinationPlace;
-  document.getElementById("startPlace").value = rental.startPlace;
-  document.getElementById("isSinglePassenger").checked =
-    rental.isSinglePassenger;
-  document.getElementById("fuelType").value = rental.fuelType;
-  document.getElementById("bookedBy").value = rental.bookedBy;
-  rentalData.splice(index, 1);
-  saveToLocalStorage();
+  // Update the rental data on form submission
+  const rentalForm2 = document.getElementById("rentalForm2");
+  rentalForm2.onsubmit = function (e) {
+    e.preventDefault();
+
+    // Create the updated rental object
+    const updatedRental = {
+      rentalId: document.getElementById("rentalId2").value,
+      carModel: document.getElementById("carModel2").value,
+      mfdYear: document.getElementById("mfdYear2").value,
+      rentStartDate: document.getElementById("rentStartDate2").value,
+      rentEndDate: document.getElementById("rentEndDate2").value,
+      customerName: document.getElementById("customerName2").value,
+      destinationPlace: document.getElementById("destinationPlace2").value,
+      startPlace: document.getElementById("startPlace2").value,
+      isSinglePassenger: document.getElementById("isSinglePassenger2").checked,
+      fuelType: document.getElementById("fuelType2").value,
+      bookedBy: document.getElementById("bookedBy2").value,
+    };
+
+    // Validate dates
+    if (
+      new Date(updatedRental.rentStartDate) >
+      new Date(updatedRental.rentEndDate)
+    ) {
+      alert("Start date cannot be after the end date.");
+      return;
+    }
+
+    // Update the rental data
+    rentalData[indexValue] = updatedRental;
+    saveToLocalStorage(rentalData);
+    displayTable(rentalData); // Refresh the table
+    myModal2.style.display = "none"; // Close the modal
+  };
 }
 
 // Loading initial data in tables from local storage
@@ -125,7 +232,7 @@ window.onload = function () {
 
 // pop up code for the add(+) button -------------------------------------------------------------------------------------//
 let bookButton = document.getElementById("bookButton");
-let closeButton = document.getElementById("times2");
+let closeButton = document.getElementById("times1");
 let myModalEl = document.getElementById("myModal1");
 
 bookButton.addEventListener("click", function () {
@@ -138,12 +245,76 @@ closeButton.addEventListener("click", function () {
   myModalEl.style.display = "none";
 });
 
-// Start of Script for the Popup form
+const rentalForm1 = document.getElementById("rentalForm1");
 
-const rentalForm = document.getElementById("form");
+//getting values from the form
+rentalForm1.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-//getting values from the from
-rentalForm.addEventListener("submit", function (e) {
+  function saveToLocalStorage() {
+    localStorage.setItem("rentalData", JSON.stringify(rentalData));
+  }
+
+  let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
+
+  //
+  const rental = {
+    rentalId: document.getElementById("rentalId").value,
+    carModel: document.getElementById("carModel").value,
+    mfdYear: document.getElementById("mfdYear").value,
+    rentStartDate: document.getElementById("rentStartDate").value,
+    rentEndDate: document.getElementById("rentEndDate").value,
+    customerName: document.getElementById("customerName").value,
+    destinationPlace: document.getElementById("destinationPlace").value,
+    startPlace: document.getElementById("startPlace").value,
+    isSinglePassenger: document.getElementById("isSinglePassenger").checked,
+    fuelType: document.getElementById("fuelType").value,
+    bookedBy: document.getElementById("bookedBy").value,
+  };
+  if (new Date(rental.rentStartDate) > new Date(rental.rentEndDate)) {
+    alert("Start date cannot be after the end date.");
+    return;
+  }
+
+  console.log(rental);
+  rentalData.push(rental);
+  console.log(rentalData);
+  saveToLocalStorage();
+  alert("Your Booking is Confirmed, view in Bookings Record Section");
+  window.location.href = "./bookingsrecord.html";
+  rentalForm1.reset();
+});
+// end of pop add button ------------------------------------------------------------------------
+
+// Search Button Functionality-------------------------------------------------
+const searchIcon = document.getElementById("searchIconButton");
+searchIcon.addEventListener("click", function () {
+  console.log("search icon working");
+  let searchValue = document.getElementById("rentalIdValue").value;
+
+  searchValue = searchValue.trim(); // Trimming extra spaces
+  console.log(searchValue);
+  if (searchValue === "") {
+    // If the search input is empty, show all rentals
+    displayTable(rentalData);
+  } else {
+    const filteredData = rentalData.filter(
+      (rental) => rental.rentalId === searchValue
+    );
+    console.log(filteredData, searchValue);
+    // Update the table with the filtered data but not changing original table in the local storage
+    displayTable(filteredData);
+  }
+});
+
+//End of Seach Button--------------------------------------
+
+// ---------------------------rentalform2------------------------
+
+const rentalForm2 = document.getElementById("rentalForm2");
+
+//getting values from the form
+rentalForm2.addEventListener("submit", function (e) {
   e.preventDefault();
 
   function saveToLocalStorage() {
@@ -179,27 +350,3 @@ rentalForm.addEventListener("submit", function (e) {
   window.location.href = "./bookingsrecord.html";
   rentalForm.reset();
 });
-// end of pop add button ------------------------------------------------------------------------
-
-// Search Button Functionality-------------------------------------------------
-const searchIcon = document.getElementById("searchIconButton");
-searchIcon.addEventListener("click", function () {
-  console.log("search icon working");
-  let searchValue = document.getElementById("rentalIdValue").value;
-
-  searchValue = searchValue.trim(); // Trimming extra spaces
-  console.log(searchValue);
-  if (searchValue === "") {
-    // If the search input is empty, show all rentals
-    displayTable(rentalData);
-  } else {
-    const filteredData = rentalData.filter(
-      (rental) => rental.rentalId === searchValue
-    );
-    console.log(filteredData, searchValue);
-    // Update the table with the filtered data but not changing original table in the local storage
-    displayTable(filteredData);
-  }
-});
-
-//End of Seach Button--------------------------------------

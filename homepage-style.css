@@ -330,7 +330,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 50%;
   color: aliceblue;
   border-radius: 15px;
   background-color: darkslategrey;
@@ -345,7 +345,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  align-content: stretch;
+  flex-shrink: 1;
 }
 .close {
   color: #ffffff;
@@ -371,7 +371,7 @@ form > div > input {
   border-radius: 6px;
   border: none;
   min-width: 250px;
-  min-height: 30px;
+  min-height: 33px;
 }
 .checkbox_style {
   display: flex;
@@ -393,7 +393,8 @@ form > div > input {
 
 form > div > label {
   color: aliceblue;
-  display: block;
+  display: inline-block;
+  font-weight: 100;
   margin-right: 80px;
 }
 
@@ -406,9 +407,16 @@ form > div > label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
+    width: 90%;
+    height: 80%;
     color: aliceblue;
     border-radius: 15px;
     background-color: darkslategrey;
   }
+}
+
+.select_input_style {
+  width: 254px;
+  height: 35px;
+  border-radius: 6px;
 }

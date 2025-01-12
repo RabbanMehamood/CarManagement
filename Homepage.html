@@ -196,13 +196,17 @@
       </main>
       <!-- Book Button -->
       <div id="myModal" class="modal">
-        <span class="close" id="times">&times;</span>
         <div class="modal-content">
-          <div>
-            <h3 style="color: white; text-align: center">Car Rental Form</h3>
+          <div class="modal_top">
+            <div>
+              <h3 style="color: white; text-align: center">Car Rental Form</h3>
+            </div>
+            <div>
+              <span class="close" id="times">&times;</span>
+            </div>
           </div>
           <div>
-            <form action="rentalForm" id="form" method="post">
+            <form action="rentalForm" id="form">
               <div>
                 <label for="rentalId">Rental ID :</label><br />
                 <input
@@ -212,81 +216,80 @@
                   value=""
                   placeholder="Ex:001, 002, 003"
                   required
-                /><br /><br />
+                />
               </div>
               <div>
-                <label for="carModel">Car Model :</label><br />
-                <select
-                  id="carModel"
-                  name="Cartype"
-                  style="width: 250px; height: 33px; border-radius: 10px"
-                >
-                  <option value="Horizon Mirage Convertible">
-                    Horizon Mirage Convertible
-                  </option>
-                  <option value="Zephyr A4 Stratos">Zephyr A4 Stratos</option>
-                  <option value="Aurora X5 Nebula">Aurora X5 Nebula</option>
-                  <option value="Vanguard CX2 Convertible">
-                    Vanguard CX2 Convertible
-                  </option>
-                  <option value="Stellar Orion Hybrid">
-                    Stellar Orion Hybrid
-                  </option>
-                  <option value="Vanguard C-Class Coupe">
-                    Vanguard C-Class Coupe
-                  </option>
-                </select>
+                <label for="carModel">Car Model :</label>
+                <div class="select_input_style">
+                  <select
+                    id="carModel"
+                    name="Cartype"
+                    style="width: 250px; height: 33px; border-radius: 10px"
+                  >
+                    <option value="Horizon Mirage Convertible">
+                      Horizon Mirage Convertible
+                    </option>
+                    <option value="Zephyr A4 Stratos">Zephyr A4 Stratos</option>
+                    <option value="Aurora X5 Nebula">Aurora X5 Nebula</option>
+                    <option value="Vanguard CX2 Convertible">
+                      Vanguard CX2 Convertible
+                    </option>
+                    <option value="Stellar Orion Hybrid">
+                      Stellar Orion Hybrid
+                    </option>
+                    <option value="Vanguard C-Class Coupe">
+                      Vanguard C-Class Coupe
+                    </option>
+                  </select>
+                </div>
               </div>
               <div>
-                <label for="mfdYear">Manufacturing Year:</label><br />
+                <label for="mfdYear">Manufacturing Year:</label>
                 <input
                   type="number"
                   id="mfdYear"
-                  name="mfdYear"
-                  value=""
-                /><br /><br />
+                  min="1900"
+                  max="2025"
+                  step="1"
+                  placeholder="YYYY"
+                />
               </div>
 
               <div>
-                <label for="rentStartDate">Rent Start Date :</label><br />
-                <input
-                  type="date"
-                  id="rentStartDate"
-                  name="rentStartDate"
-                  required
-                /><br /><br />
+                <label for="rentStartDate">Rent Start Date :</label>
+                <input type="date" id="rentStartDate" name="rentStartDate" />
               </div>
               <div>
-                <label for="rentEndDate">Rent End Date :</label><br />
+                <label for="rentEndDate">Rent End Date :</label>
                 <input
                   type="date"
                   id="rentEndDate"
                   name="rentEndDate"
                   required
-                /><br /><br />
+                />
               </div>
               <div>
-                <label for="customerName">Customer Name :</label><br />
+                <label for="customerName">Customer Name :</label>
                 <input
                   type="text"
                   id="customerName"
                   name="customerName"
                   value=""
                   required
-                /><br /><br />
+                />
               </div>
               <div>
-                <label for="destinationPlace">Destination Place:</label><br />
+                <label for="destinationPlace">Destination Place:</label>
                 <input
                   type="text"
                   id="destinationPlace"
                   name="destinationPlace"
                   value=""
                   required
-                /><br /><br />
+                />
               </div>
               <div>
-                <label for="startPlace">Start Place:</label><br />
+                <label for="startPlace">Start Place:</label>
                 <input
                   type="text"
                   id="startPlace"
@@ -320,12 +323,7 @@
 
               <div>
                 <label for="bookedBy">Booked by:</label>
-                <input
-                  type="text"
-                  id="bookedBy"
-                  name="bookedBy"
-                  value=""
-                /><br /><br />
+                <input type="text" id="bookedBy" name="bookedBy" value="" />
               </div>
 
               <button class="submit_style" type="submit" value="Submit">

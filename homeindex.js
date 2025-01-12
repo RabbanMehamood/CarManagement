@@ -2,6 +2,9 @@ let bookButton = document.getElementById("bookbutton");
 let closeButton = document.getElementById("times");
 let myModalEl = document.getElementById("myModal");
 
+onStartRentDate();
+onStartEndDate();
+
 bookButton.addEventListener("click", function () {
   console.log("button Got clicked");
   myModalEl.style.display = "block";
@@ -38,8 +41,13 @@ rentalForm.addEventListener("submit", function (e) {
     fuelType: document.getElementById("fuelType").value,
     bookedBy: document.getElementById("bookedBy").value,
   };
-  if (new Date(rental.rentStartDate) > new Date(rental.rentEndDate)) {
-    alert("Start date cannot be after the end date.");
+  if (
+    new Date(rental.rentStartDate) > new Date(rental.rentEndDate) ||
+    new Date(rental.rentStartDate) == new Date(rental.rentEndDate)
+  ) {
+    alert(
+      "Start Date and End Date are Same or Start Date is more than End Date"
+    );
     return;
   }
   console.log(rental);
@@ -60,4 +68,33 @@ function removeCred() {
   window.location.href = "loginpage.html";
   localStorage.removeItem("username");
   localStorage.removeItem("password");
+}
+
+function onStartRentDate() {
+  var date = new Date();
+
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = year + "-" + month + "-" + day;
+  document.getElementById("rentStartDate").value = today;
+  document.getElementById("rentStartDate").setAttribute("min", today);
+}
+
+function onStartEndDate() {
+  var date = new Date();
+
+  var day = date.getDate() + 1;
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+
+  if (month < 10) month = "0" + month;
+  if (day < 10) day = "0" + day;
+
+  var today = year + "-" + month + "-" + day;
+  document.getElementById("rentEndDate").setAttribute("min", today);
 }

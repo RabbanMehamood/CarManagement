@@ -61,6 +61,7 @@ rentalForm.addEventListener("submit", function (e) {
 window.onload = function () {
   const username = localStorage.getItem("username");
   document.getElementById("onLoadUserName").innerHTML = `Welcome ${username}`;
+  reloadCarModels();
 };
 
 function removeCred() {
@@ -97,4 +98,18 @@ function onStartEndDate() {
 
   var today = year + "-" + month + "-" + day;
   document.getElementById("rentEndDate").setAttribute("min", today);
+}
+// --------------------------------------------------------------------------
+
+// function for reloading admin added cars
+function reloadCarModels() {
+  let selectoption = document.getElementById("carModel");
+  let carmodels = JSON.parse(localStorage.getItem("carModels"));
+  console.log(carmodels);
+  carmodels.forEach((model) => {
+    const option = document.createElement("option");
+    option.value = model;
+    option.textContent = model;
+    selectoption.appendChild(option);
+  });
 }

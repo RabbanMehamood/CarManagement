@@ -64,13 +64,13 @@ tr:hover {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  position: sticky;
+  top: 0px;
+  background-color: #124e4d;
 }
 .modal_content {
   border: none;
   border-radius: 20px;
-  width: 80%;
-  margin: auto;
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -42,18 +42,25 @@
         border-radius: 10px;
       }
       .card button {
-        padding: 10px;
-        background-color: red;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
+       padding: 10px;
+       background-color: red; /* Default background color */
+       color: white; /* Default text color */
+       border: none;
+       cursor: pointer;
+       border-radius: 5px;
       }
-      .card > button:hover {
-        background-color: rgb(136, 108, 108);
+
+      .card button:hover {
+    background-color: rgb(136, 108, 108); /* Hover color */
+      }
+
+      .card button:disabled {
+          background-color: #ccc; 
+          color: #666; 
+          cursor: not-allowed;
       }
       .admin-section {
-            margin: 20px;
+            margin: 20px 10px 10px 10px;
             display: none; /* Initially hidden */
         }
     </style>
@@ -75,12 +82,19 @@
       </div>
       <div class="admin-section" id="adminSection">
             <h2>Add Car Model</h2>
-            <input type="text" id="carModelInput" placeholder="Enter Car Model" style="width: 255px; height: 34px; border-radius: 7px; border: none; margin:10px;"/>
-            <button id="addCarModelBtn" style="padding:4px; border-radius: 5px;">Add Car Model</button>
-            <span style="margin-left: 20px;">Available Car Models :</span>
+            <div style="display: flex;flex-direction: row; flex-wrap: wrap; justify-content: space-between;  align-content: stretch;
+    align-items: baseline;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; align-content: center;">
+            <input type="text" id="carModelInput" placeholder="Enter Car Model" style="width: 255px; height: 34px; border-radius: 7px; border: none; margin-bottom:10px; margin-right: 10px;"/>
+            <span><button id="addCarModelBtn" style="padding:4px; border-radius: 5px;">Add Car Model</button>
+            </div>
+            <div>
+            <span style="margin: 20px 10px 10px 10px;">Available Car Models :</span>
             <select id="carModelDropdown" style="width: 255px; height: 34px; border-radius: 7px; border: none;"></select>
+            </div>
+            </div>
         </div>
-        <div style="margin: 20px;"><h2>Reservation Details</h2></div>
+        <div style="margin: 20px 10px 10px 10px;"><h2>Reservation Details</h2></div>
       <div class="cards_container" id="rentalCardsContainer"></div>
     </div>
   </div>

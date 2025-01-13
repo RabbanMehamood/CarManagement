@@ -75,12 +75,16 @@ h2 {
   height: 50px;
   border-radius: 40px;
   border: none;
-  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .login-image {
+  position: sticky;
   border-radius: 100px;
   height: 70px;
   width: 70px;
+  z-index: 1;
+  top: 6px;
+  left: 96px;
 }
 #loginSection {
   display: block;

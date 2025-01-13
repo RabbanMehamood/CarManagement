@@ -1,5 +1,7 @@
 body {
   font-family: "Gill Sans", sans-serif;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .container {
   background-image: url("./AssetsHome/heroImage.png");
@@ -326,34 +328,36 @@ body {
   text-align: center;
   display: none;
   position: fixed;
-  overflow: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50%;
+  height: 88%;
   color: aliceblue;
   border-radius: 15px;
   background-color: darkslategrey;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .modal-content {
   border: none;
   border-radius: 20px;
-  width: 80%;
+  width: auto;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  flex-shrink: 1;
 }
 .close {
-  color: #ffffff;
-  float: right;
+  cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 28px;
+  top: 5px;
+  right: 10px;
+  font-weight: 500;
+  font-size: 25px;
 }
 
 /* styling Form */
@@ -394,11 +398,11 @@ form > div > input {
 form > div > label {
   color: aliceblue;
   display: inline-block;
-  font-weight: 100;
   margin-right: 80px;
+  font-size: 13px;
 }
 
-@media only screen and (max-device-width: 480px) {
+/* @media only screen and (max-device-width: 480px) {
   .modal {
     text-align: center;
     display: none;
@@ -413,10 +417,15 @@ form > div > label {
     border-radius: 15px;
     background-color: darkslategrey;
   }
-}
+} */
 
 .select_input_style {
   width: 254px;
   height: 35px;
   border-radius: 6px;
+}
+
+#form > label {
+  font-size: 13px;
+  font-weight: 700;
 }

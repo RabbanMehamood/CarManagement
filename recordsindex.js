@@ -48,20 +48,36 @@ const times2 = document.getElementById("times2");
 
 // Open view modal (working when clicked in view Details)
 function openViewModal(rental) {
-  let details = `<p><strong>Rental ID:</strong> ${rental.rentalId}</p>
-                   <p><strong>Car Model:</strong> ${rental.carModel}</p>
-                   <p><strong>Start Date:</strong> ${rental.rentStartDate}</p>
-                   <p><strong>End Date:</strong> ${rental.rentEndDate}</p>
-                   <p><strong>Customer Name:</strong> ${rental.customerName}</p>
-                   <p><strong>Destination:</strong> ${
+  let details = `<div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Rental ID:</span> <span>${
+    rental.rentalId
+  }</span></div>
+                  <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Car Model: </span> <span>${
+                    rental.carModel
+                  }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Start Date:</span> <span>${
+                     rental.rentStartDate
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>End Date:</span> <span>${
+                     rental.rentEndDate
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Customer Name:</span> <span>${
+                     rental.customerName
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Destination:</span> <span>${
                      rental.destinationPlace
-                   }</p>
-                   <p><strong>Start Place:</strong> ${rental.startPlace}</p>
-                   <p><strong>Passenger:</strong> ${
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Start Place:</span><span> ${
+                     rental.startPlace
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Passenger:</span><span> ${
                      rental.isSinglePassenger ? "Yes" : "No"
-                   }</p>
-                   <p><strong>Fuel Type:</strong> ${rental.fuelType}</p>
-                   <p><strong>Booked By:</strong> ${rental.bookedBy}</p>`;
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Fuel Type:</span> <span>${
+                     rental.fuelType
+                   }</span></div>
+                   <div style="display:flex; flex-direction:row; justify-content: space-between; padding: 6px;"><span>Booked By:</span> <span>${
+                     rental.bookedBy
+                   }</span></div>`;
   viewDetails.innerHTML = details;
   viewModal.style.display = "block";
 }
@@ -203,7 +219,6 @@ function editRental(index, indexValue) {
       bookedBy: document.getElementById("bookedBy2").value,
     };
 
-    // Validate dates
     if (
       new Date(updatedRental.rentStartDate) >
       new Date(updatedRental.rentEndDate)
@@ -284,69 +299,67 @@ rentalForm1.addEventListener("submit", function (e) {
   window.location.href = "./bookingsrecord.html";
   rentalForm1.reset();
 });
-// end of pop add button ------------------------------------------------------------------------
+// end of pop add button ----------------------------------------
 
-// Search Button Functionality-------------------------------------------------
+// Search Button Functionality-----------------------------------
 const searchIcon = document.getElementById("searchIconButton");
 searchIcon.addEventListener("click", function () {
   console.log("search icon working");
   let searchValue = document.getElementById("rentalIdValue").value;
 
-  searchValue = searchValue.trim(); // Trimming extra spaces
+  searchValue = searchValue.trim();
   console.log(searchValue);
   if (searchValue === "") {
-    // If the search input is empty, show all rentals
     displayTable(rentalData);
   } else {
     const filteredData = rentalData.filter(
-      (rental) => rental.rentalId === searchValue
+      (rental) => rental.rentalId == searchValue
     );
     console.log(filteredData, searchValue);
-    // Update the table with the filtered data but not changing original table in the local storage
     displayTable(filteredData);
   }
 });
 
 //End of Seach Button--------------------------------------
 
-// ---------------------------rentalform2------------------------
+// ---------------------------rentalform2------------------
 
-const rentalForm2 = document.getElementById("rentalForm2");
+// const rentalForm2 = document.getElementById("rentalForm2");
 
-//getting values from the form
-rentalForm2.addEventListener("submit", function (e) {
-  e.preventDefault();
+//inserted in EditRental for flow of fetching and updating values.
+// rentalForm2.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  function saveToLocalStorage() {
-    localStorage.setItem("rentalData", JSON.stringify(rentalData));
-  }
+//   function saveToLocalStorage() {
+//     localStorage.setItem("rentalData", JSON.stringify(rentalData));
+//   }
 
-  let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
+//   let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
 
-  //
-  const rental = {
-    rentalId: document.getElementById("rentalId").value,
-    carModel: document.getElementById("carModel").value,
-    mfdYear: document.getElementById("mfdYear").value,
-    rentStartDate: document.getElementById("rentStartDate").value,
-    rentEndDate: document.getElementById("rentEndDate").value,
-    customerName: document.getElementById("customerName").value,
-    destinationPlace: document.getElementById("destinationPlace").value,
-    startPlace: document.getElementById("startPlace").value,
-    isSinglePassenger: document.getElementById("isSinglePassenger").checked,
-    fuelType: document.getElementById("fuelType").value,
-    bookedBy: document.getElementById("bookedBy").value,
-  };
-  if (new Date(rental.rentStartDate) > new Date(rental.rentEndDate)) {
-    alert("Start date cannot be after the end date.");
-    return;
-  }
+//   //
+//   const rental = {
+//     rentalId: document.getElementById("rentalId").value,
+//     carModel: document.getElementById("carModel").value,
+//     mfdYear: document.getElementById("mfdYear").value,
+//     rentStartDate: document.getElementById("rentStartDate").value,
+//     rentEndDate: document.getElementById("rentEndDate").value,
+//     customerName: document.getElementById("customerName").value,
+//     destinationPlace: document.getElementById("destinationPlace").value,
+//     startPlace: document.getElementById("startPlace").value,
+//     isSinglePassenger: document.getElementById("isSinglePassenger").checked,
+//     fuelType: document.getElementById("fuelType").value,
+//     bookedBy: document.getElementById("bookedBy").value,
+//   };
+//   if (new Date(rental.rentStartDate) > new Date(rental.rentEndDate)) {
+//     alert("Start date cannot be after the end date.");
+//     return;
+//   }
 
-  console.log(rental);
-  rentalData.push(rental);
-  console.log(rentalData);
-  saveToLocalStorage();
-  alert("Your Booking is Confirmed, view in Bookings Record Section");
-  window.location.href = "./bookingsrecord.html";
-  rentalForm.reset();
-});
+//   console.log(rental);
+//   rentalData.push(rental);
+//   console.log(rentalData);
+//   saveToLocalStorage();
+//   alert("Your Booking is Confirmed, view in Bookings Record Section");
+//   window.location.href = "./bookingsrecord.html";
+//   rentalForm.reset();
+// });

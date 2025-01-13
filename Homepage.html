@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  style="
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  "
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -224,7 +230,7 @@
                   <select
                     id="carModel"
                     name="Cartype"
-                    style="width: 250px; height: 33px; border-radius: 10px"
+                    style="width: 255px; height: 34px; border-radius: 7px"
                   >
                     <option value="Horizon Mirage Convertible">
                       Horizon Mirage Convertible
@@ -257,7 +263,12 @@
 
               <div>
                 <label for="rentStartDate">Rent Start Date :</label>
-                <input type="date" id="rentStartDate" name="rentStartDate" />
+                <input
+                  type="date"
+                  id="rentStartDate"
+                  name="rentStartDate"
+                  style="width: 255px; height: 34px; border-radius: 7px"
+                />
               </div>
               <div>
                 <label for="rentEndDate">Rent End Date :</label>
@@ -266,6 +277,7 @@
                   id="rentEndDate"
                   name="rentEndDate"
                   required
+                  style="width: 255px; height: 34px; border-radius: 7px"
                 />
               </div>
               <div>
@@ -314,7 +326,7 @@
                 <select
                   id="fuelType"
                   name="fuelType"
-                  style="width: 250px; height: 33px; border-radius: 10px"
+                  style="width: 255px; height: 34px; border-radius: 7px"
                 >
                   <option value="petrol">Petrol</option>
                   <option value="diesel">Diesel</option>

@@ -52,6 +52,10 @@
       .card > button:hover {
         background-color: rgb(136, 108, 108);
       }
+      .admin-section {
+            margin: 20px;
+            display: none; /* Initially hidden */
+        }
     </style>
   </head>
   <body>
@@ -69,6 +73,14 @@
             <a href="homepage.html" style="text-decoration: none;"> &#x21E6;  Homepage </a>
         </div>
       </div>
+      <div class="admin-section" id="adminSection">
+            <h2>Add Car Model</h2>
+            <input type="text" id="carModelInput" placeholder="Enter Car Model" style="width: 255px; height: 34px; border-radius: 7px; border: none; margin:10px;"/>
+            <button id="addCarModelBtn" style="padding:4px; border-radius: 5px;">Add Car Model</button>
+            <span style="margin-left: 20px;">Available Car Models :</span>
+            <select id="carModelDropdown" style="width: 255px; height: 34px; border-radius: 7px; border: none;"></select>
+        </div>
+        <div style="margin: 20px;"><h2>Reservation Details</h2></div>
       <div class="cards_container" id="rentalCardsContainer"></div>
     </div>
   </div>

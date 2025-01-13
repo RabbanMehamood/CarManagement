@@ -19,7 +19,7 @@ table {
 td,
 th {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 
@@ -37,7 +37,7 @@ tr:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: auto;
   color: aliceblue;
   border-radius: 15px;
   background-color: darkslategrey;
@@ -46,22 +46,30 @@ tr:hover {
 /* Add button pop up style ------------------------------------------------------------*/
 .modal_popup {
   display: none;
-  text-align: center;
   position: fixed;
-  overflow: auto;
   top: 50%;
   left: 50%;
+  overflow: auto;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 40%;
   color: aliceblue;
   border-radius: 15px;
   background-color: darkslategrey;
-  height: 80%;
+  height: 70%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.modal_header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 .modal_content {
   border: none;
   border-radius: 20px;
   width: 80%;
+  margin: auto;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -71,13 +79,17 @@ tr:hover {
   align-content: stretch;
 }
 .close {
-  color: #ffffff;
-  float: right;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-weight: 500;
   font-size: 25px;
-  margin-right: 20px;
-  margin-top: 10px;
 }
 /* styling Form */
+form > div > label {
+  font-size: 13px;
+}
 form > div {
   display: flex;
   margin: 10px;
@@ -122,14 +134,13 @@ form > div > label {
 
 /* view Details Styling----------------------------------- */
 .view_Details_style {
-  display: flex;
-  justify-content: space-around;
+  display: inline-block;
+  justify-content: space-between;
+  position: relative;
   align-items: flex-start;
   margin: auto;
-  width: auto;
-  height: auto;
-  flex-wrap: wrap;
-  text-align: center;
+  width: 300px;
+  height: max-content;
   padding: 30px;
 }
 

@@ -51,7 +51,7 @@ tr:hover {
   left: 50%;
   overflow: auto;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: auto;
   color: aliceblue;
   border-radius: 15px;
   background-color: darkslategrey;
@@ -66,6 +66,7 @@ tr:hover {
   justify-content: center;
   position: sticky;
   top: 0px;
+  border-radius: 15px;
   background-color: #124e4d;
 }
 .modal_content {
@@ -104,7 +105,7 @@ form > div > input {
   border-radius: 6px;
   border: none;
   min-width: 250px;
-  min-height: 30px;
+  min-height: 33px;
 }
 .checkbox_style {
   display: flex;
@@ -116,12 +117,12 @@ form > div > input {
 }
 
 .submit_style {
-  margin-left: 200px;
+  margin: 20px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   width: 100px;
-  margin-top: 30px;
+  float: right;
 }
 
 form > div > label {

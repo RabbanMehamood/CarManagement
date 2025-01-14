@@ -26,11 +26,14 @@ body {
 
 .header_nav {
   width: 100%;
-  max-width: 369px;
+  max-width: 350px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  align-content: center;
+  flex-direction: row;
+  margin-left: -1px;
 }
 
 .header_btn {
@@ -41,7 +44,7 @@ body {
   width: 100%;
   max-width: 206px;
   flex-direction: row;
-  margin: 40px;
+  margin: 7px;
 }
 
 .header_nav > a {
@@ -325,30 +328,39 @@ body {
 
 /* Modal styles */
 .modal {
-  text-align: center;
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
+  overflow: auto;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 88%;
+  width: auto;
   color: aliceblue;
   border-radius: 15px;
   background-color: darkslategrey;
-  overflow: auto;
+  height: 70%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+.modal_top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  border-radius: 15px;
+  background-color: #124e4d;
 }
 .modal-content {
   border: none;
   border-radius: 20px;
-  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
+  align-content: stretch;
 }
 .close {
   cursor: pointer;
@@ -386,12 +398,12 @@ form > div > input {
 }
 
 .submit_style {
-  margin-left: 200px;
+  margin: 20px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 6px;
   border: none;
   width: 100px;
-  margin-top: 30px;
+  float: right;
 }
 
 form > div > label {

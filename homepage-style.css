@@ -41,8 +41,6 @@ body {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  max-width: 206px;
   flex-direction: row;
   margin: 7px;
 }
@@ -50,14 +48,21 @@ body {
 .header_nav > a {
   text-decoration: none;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 19.2px;
   color: orangered;
 }
+.header_nav > a:hover {
+  font-weight: 400;
+  font-size: 18px;
+  border-bottom: 1px solid black;
+  color: rgb(4, 4, 1);
+}
+
 .header_btn > button {
   width: 100%;
   max-width: 119px;
-  border-radius: 32px;
+  border-radius: 9px;
   background-color: black;
   font-family: sans-serif;
   font-size: 16px;
@@ -116,7 +121,7 @@ body {
 .section_hero_left > button {
   width: 100%;
   max-width: 156px;
-  border-radius: 32px;
+  border-radius: 9px;
   padding: 10.5px 26px;
   color: white;
   font-size: 16px;
@@ -201,7 +206,7 @@ body {
   font-weight: 600;
   font-family: sans-serif;
   color: white;
-  border-radius: 32px;
+  border-radius: 9px;
   border: 1px solid red;
   background-color: black;
   color: white;
@@ -313,7 +318,7 @@ body {
   max-width: 97px;
   background-color: orangered;
   border: 1px solid red;
-  border-radius: 32px;
+  border-radius: 9px;
   padding: 10.5px 26px;
   font-size: 16px;
   line-height: 19.2px;

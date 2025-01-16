@@ -130,14 +130,17 @@ function deleteRental(index) {
 }
 
 // Close modal when clicking outside of the modal NOt working, work on it
-// window.onclick = function (event) {
-//   if (event.target == myModal) {
-//     closeModal();
-//   }
-//   if (event.target == viewModal) {
-//     viewModal.style.display = "none";
-//   }
-// };
+window.onclick = function (event) {
+  if (event.target == myModal2) {
+    myModal2.style.display = "none";
+  }
+  if (event.target == viewModal) {
+    viewModal.style.display = "none";
+  }
+  if (event.target == myModalEl) {
+    myModalEl.style.display = "none";
+  }
+};
 
 // Editing function.
 function editRental(index, indexValue) {
@@ -281,6 +284,7 @@ searchIcon.addEventListener("click", function () {
     displayTable(filteredData);
   }
 });
+//End of Seach Button--------------------------------------
 
 // -------------------------------Reload Car Models
 function reloadCarModels() {
@@ -307,5 +311,3 @@ function reloadCarModelsEdit() {
     selectoption.appendChild(option);
   });
 }
-
-//End of Seach Button--------------------------------------

@@ -1,5 +1,5 @@
 function validateLoginForm(event) {
-  event.preventDefault(); // Prevent form doing default things.
+  event.preventDefault();
 
   var name = document.getElementById("logName").value;
   var password = document.getElementById("logPassword").value;
@@ -24,12 +24,11 @@ function validateLoginForm(event) {
     document.getElementById("loginerrorMsg").innerHTML =
       "Your password has more than 8 characters";
   } else if (!userExists) {
-    alert("User not found. Please register first"); // Ask to user to register for getting login details
-  } else {
+    alert("User not found. Please register first");
     localStorage.setItem("username", name);
     localStorage.setItem("password", password);
     alert("Successfully logged in");
-    window.location.href = "./homepage.html"; // Redirect to the homepage after successful login
+    window.location.href = "./homepage.html";
   }
 }
 
@@ -52,7 +51,6 @@ function validateSignupForm(event) {
     document.getElementById("passwordmatcherror").innerHTML =
       "Passwords do not match";
   } else {
-    // Check if user already exists
     var users = JSON.parse(localStorage.getItem("users")) || [];
     var userExists = false;
     for (var i = 0; i < users.length; i++) {
@@ -64,7 +62,6 @@ function validateSignupForm(event) {
     if (userExists) {
       alert("User already exists. Please login.");
     } else {
-      // Store new user in localStorage
       users.push({ name: name, email: mail, password: password });
       localStorage.setItem("users", JSON.stringify(users));
       window.location.reload();

@@ -27,9 +27,31 @@ rentalForm.addEventListener("submit", function (e) {
 
   let rentalData = JSON.parse(localStorage.getItem("rentalData")) || [];
 
-  // Get form data
+  function generateUniqueRentalId(rentalIdInput) {
+    let highestId = 0;
+    let rentalIdExists = false;
+
+    rentalData.forEach((rental) => {
+      const rentalId = parseInt(rental.rentalId, 10);
+      if (rentalId > highestId) {
+        highestId = rentalId;
+      }
+      if (rental.rentalId === rentalIdInput) {
+        rentalIdExists = true;
+      }
+    });
+
+    if (!rentalIdExists) {
+      return rentalIdInput.padStart(3, "0");
+    } else {
+      return (highestId + 1).toString().padStart(3, "0");
+    }
+  }
+
+  const rentalIdInput = document.getElementById("rentalId").value;
+
   const rental = {
-    rentalId: document.getElementById("rentalId").value,
+    rentalId: generateUniqueRentalId(rentalIdInput),
     carModel: document.getElementById("carModel").value,
     mfdYear: document.getElementById("mfdYear").value,
     rentStartDate: document.getElementById("rentStartDate").value,

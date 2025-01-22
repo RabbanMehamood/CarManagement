@@ -75,16 +75,29 @@ document
   .getElementById("addCarModelBtn")
   .addEventListener("click", function () {
     const carModelInput = document.getElementById("carModelInput");
-    const newCarModel = carModelInput.value.trim();
-
-    if (newCarModel) {
-      carModels.push(newCarModel);
-      localStorage.setItem("carModels", JSON.stringify(carModels));
-      carModelInput.value = "";
-      populateCarModelDropdown();
-    } else {
-      alert("Please enter a valid car model.");
+    const newCarModel = carModelInput.value.trim().toLowerCase();
+    if (carModelInput.value === "") {
+      alert("Please Enter Car Name");
+      return;
     }
+    let carmodels = JSON.parse(localStorage.getItem("carModels")) || [];
+
+    if (!carmodels.includes(newCarModel)) {
+      carmodels.push(newCarModel);
+      localStorage.setItem("carModels", JSON.stringify(carmodels));
+      alert("New Car Model added Successfully.");
+      window.location.reload();
+    } else {
+      alert("This car model already exists.");
+    }
+    // if (newCarModel) {
+    //   carModels.push(newCarModel);
+    //   localStorage.setItem("carModels", JSON.stringify(carModels));
+    //   carModelInput.value = "";
+    //   populateCarModelDropdown();
+    // } else {
+    //   alert("Please enter a valid car model.");
+    // }
   });
 
 // Function to populate the car model dropdown

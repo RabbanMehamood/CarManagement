@@ -6,7 +6,7 @@
     <title>Page3</title>
     <style>
      body{
-      background-color: cadetblue;
+      background-color: rgb(254, 234, 234);
       font-family: sans-serif;
      }
       .nav_top {
@@ -27,13 +27,13 @@
         
       }
       .card {
-        background-color: white;
-        width: 300px;
-        border: 1px solid #ccc;
-        padding: 20px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           background-color: rgb(228 167 167);
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(141, 101, 101);
       }
       .card img {
         width: 100%;
@@ -42,16 +42,18 @@
         border-radius: 10px;
       }
       .card button {
-       padding: 10px;
-       background-color: red; /* Default background color */
-       color: white; /* Default text color */
-       border: none;
-       cursor: pointer;
-       border-radius: 5px;
+           padding: 10px;
+    background-color: #d6001a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    width: 90px;
+    font-weight: 600;
       }
 
       .card button:hover {
-    background-color: rgb(136, 108, 108); /* Hover color */
+    background-color: rgb(141, 101, 101); /* Hover color */
       }
 
       .card button:disabled {
@@ -71,7 +73,7 @@
         <div>
           <a href="./homepage.html" 
             ><img src="./AssetsHome/DrivoxeLogo.png" alt="logopng"
-          style="border: 2px solid black;"/></a>
+          style="border: 2px solid black; border-radius: 6px;"/></a>
         </div>
         <div>
           <h1 style="margin-right:80px;">Reservation Details</h1>
@@ -84,13 +86,18 @@
             <h2>Add Car Model</h2>
             <div style="display: flex;flex-direction: row; flex-wrap: wrap; justify-content: space-between;  align-content: stretch;
     align-items: baseline;">
-            <div style="display: flex; flex-direction: row; justify-content: space-between; align-content: center;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; align-content: center; align-items: baseline;">
             <input type="text" id="carModelInput" placeholder="Enter Car Model" style="width: 255px; height: 34px; border-radius: 7px; border: none; margin-bottom:10px; margin-right: 10px;"/>
-            <span><button id="addCarModelBtn" style="padding:4px; border-radius: 5px;">Add Car Model</button>
+            <span><button id="addCarModelBtn" style="padding: 4px;
+    border-radius: 7px;
+    height: 36px;
+    background: black;
+    color: white;
+    font-weight: 600;">Add Car Model</button>
             </div>
             <div>
             <span style="margin: 20px 10px 10px 10px;">Available Car Models :</span>
-            <select id="carModelDropdown" style="width: 255px; height: 34px; border-radius: 7px; border: none;"></select>
+            <select id="carModelDropdown" style="width: 259px; height: 36px; border-radius: 7px; border: none;"></select>
             </div>
             </div>
         </div>

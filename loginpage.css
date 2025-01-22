@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #4da3d2;
+  background-color: #c7a1a1;
   font-family: "Gill Sans", sans-serif;
 }
 h2 {
@@ -24,7 +24,7 @@ h2 {
   width: auto;
   height: auto;
   background: rgba(255, 255, 255, 0.28);
-  border-radius: 16px;
+  border-radius: 7px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -35,7 +35,7 @@ h2 {
   width: auto;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.28);
-  border-radius: 16px;
+  border-radius: 7px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   /* border: 1px solid rgba(255, 255, 255, 0.3); */
@@ -47,6 +47,8 @@ h2 {
   font-family: sans-serif;
   height: auto;
   border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
   padding-left: 10px;
   background-color: white;
   color: black;
@@ -54,7 +56,8 @@ h2 {
 .icon {
   width: 45px;
   height: 51px;
-  border: none;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 .username-div {
   display: flex;
@@ -67,15 +70,17 @@ h2 {
 }
 
 .login-button {
-  background-color: #2479b9;
-  color: white;
-  font-family: sans-serif;
-  text-align: center;
-  width: 180px;
-  height: 50px;
-  border-radius: 40px;
+  width: 100%;
+  max-width: 135px;
   border: none;
-  margin-bottom: 30px;
+  border-radius: 7px;
+  background-color: #010101;
+  font-family: sans-serif;
+  /* font-size: 16px; */
+  font-weight: 600;
+  line-height: 19.2px;
+  color: white;
+  padding: 10.5px 26px;
 }
 .login-image {
   position: sticky;

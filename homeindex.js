@@ -1,6 +1,7 @@
 let bookButton = document.getElementById("bookbutton");
 let closeButton = document.getElementById("times");
 let myModalEl = document.getElementById("myModal");
+let home = document.getElementById("Home");
 
 onStartRentDate();
 onStartEndDate();
@@ -8,10 +9,12 @@ onStartEndDate();
 bookButton.addEventListener("click", function () {
   console.log("button Got clicked");
   myModalEl.style.display = "block";
+  home.style.filter = "blur(20px)";
 });
 
 closeButton.addEventListener("click", function () {
   myModalEl.style.display = "none";
+  home.style.filter = "none";
 });
 // Start of Script for the Popup form
 

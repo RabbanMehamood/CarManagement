@@ -8,7 +8,6 @@ function displayRentalCards() {
   rentalData.forEach((rental, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
-
     card.innerHTML = `
             <img src="./AssetsHome/car1.png" alt="Car Image">
             <h3>${rental.carModel}</h3>

@@ -358,7 +358,7 @@ body {
   width: auto;
   color: aliceblue;
   border-radius: 15px;
-  background-color: #0f3e2f;
+  background-color: rgb(18, 78, 77);
   height: 70%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -371,7 +371,7 @@ body {
   position: sticky;
   top: 0px;
   border-radius: 15px;
-  background-color: #124e4d;
+  background-color: rgb(18, 78, 77);
 }
 .modal-content {
   border: none;
@@ -400,7 +400,7 @@ form > div {
   flex-wrap: wrap;
   align-items: center;
   align-content: stretch;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 form > div > input {
@@ -460,4 +460,11 @@ form > div > label {
 #form > label {
   font-size: 13px;
   font-weight: 700;
+}
+
+.blockbg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
 }

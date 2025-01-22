@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"   style="
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  ">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -86,7 +89,7 @@
             <h2>Add Car Model</h2>
             <div style="display: flex;flex-direction: row; flex-wrap: wrap; justify-content: space-between;  align-content: stretch;
     align-items: baseline;">
-            <div style="display: flex; flex-direction: row; justify-content: space-between; align-content: center; align-items: baseline;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; align-content: center; align-items: flex-start;">
             <input type="text" id="carModelInput" placeholder="Enter Car Model" style="width: 255px; height: 34px; border-radius: 7px; border: none; margin-bottom:10px; margin-right: 10px;"/>
             <span><button id="addCarModelBtn" style="padding: 4px;
     border-radius: 7px;
@@ -96,7 +99,7 @@
     font-weight: 600;">Add Car Model</button>
             </div>
             <div>
-            <span style="margin: 20px 10px 10px 10px;">Available Car Models :</span>
+            <span style="margin: 20px 10px 10px 0px;">Available Car Models :</span>
             <select id="carModelDropdown" style="width: 259px; height: 36px; border-radius: 7px; border: none;"></select>
             </div>
             </div>
@@ -104,7 +107,6 @@
         <div style="margin: 20px 10px 10px 10px;"><h2>Reservation Details</h2></div>
       <div class="cards_container" id="rentalCardsContainer"></div>
     </div>
-  </div>
     <script src="page3.js"></script>
   </body>
 </html>

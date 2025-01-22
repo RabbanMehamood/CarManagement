@@ -79,6 +79,7 @@ function openViewModal(rental) {
                    }</span></div>`;
   viewDetails.innerHTML = details;
   viewModal.style.display = "block";
+  document.getElementById("main-container").style.display = "none";
 }
 
 // ---------------------------------------------------------------------------------Main Function for Edit,
@@ -130,15 +131,18 @@ function displayTable(rentalData) {
 // Popup functions
 times2.addEventListener("click", function () {
   myModal2.style.display = "none";
+  document.getElementById("main-container").style.display = "block";
 });
 
 function openModal() {
   myModal2.style.display = "block";
+  document.getElementById("main-container").style.display = "none";
 }
 
 // Close view modal
 viewClose.onclick = function () {
   viewModal.style.display = "none";
+  document.getElementById("main-container").style.display = "block";
 };
 
 // Delete rental(working)
@@ -234,11 +238,13 @@ let myModalEl = document.getElementById("myModal1");
 
 bookButton.addEventListener("click", function () {
   console.log("button Got clicked");
+  document.getElementById("main-container").style.display = "none";
   myModalEl.style.display = "block";
 });
 
 closeButton.addEventListener("click", function () {
   console.log("closed pop up");
+  document.getElementById("main-container").style.display = "block";
   myModalEl.style.display = "none";
 });
 // ---------------------------------Add form.
@@ -319,6 +325,7 @@ searchIcon.addEventListener("click", function () {
   searchValue = searchValue.trim();
   console.log(searchValue);
   if (searchValue === "") {
+    window.location.reload();
     displayTable(rentalData);
   } else {
     const filteredData = rentalData.filter(

@@ -1,3 +1,4 @@
 {
-  "livePreview.defaultPreviewPath": "/loginpage.html"
+  "livePreview.defaultPreviewPath": "/loginpage.html",
+  "editor.letterSpacing": 0.6
 }

@@ -23,20 +23,23 @@ table {
   width: 100%;
   border-radius: 7px;
 }
-
-td,
 th {
+  background-color: rgb(11, 10, 10);
+  color: white;
+  padding: 8px;
+  border: 2px solid white;
+}
+td {
   border: 2px solid #000000;
   text-align: center;
   padding: 8px;
-  border-top-left-radius: 7px;
 }
 
 tr:nth-child(even) {
   background-color: #dddddd;
 }
 tr:hover {
-  /* background-color: #d6eeee; */
+  background-color: #d6eeee;
 }
 
 .modal {
@@ -155,12 +158,13 @@ form > div > label {
 }
 
 .leftHeaderSection {
+  height: 100px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: center;
+  align-content: center;
   align-items: flex-end;
+  justify-content: space-between;
 }
 
 /*     display: none;

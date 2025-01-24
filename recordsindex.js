@@ -47,6 +47,9 @@ const times2 = document.getElementById("times2");
 
 // Open view modal (working when clicked in view Details)
 function openViewModal(rental) {
+  viewModal.style.display = "block";
+  document.getElementById("main-container").style.filter = "blur(8px)";
+  document.getElementById("main-container").style.pointerEvents = "none";
   let details = `<div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:70px;">Rental ID:</span> <span>${
     rental.rentalId
   }</span></div>
@@ -78,8 +81,6 @@ function openViewModal(rental) {
                      rental.bookedBy
                    }</span></div>`;
   viewDetails.innerHTML = details;
-  viewModal.style.display = "block";
-  document.getElementById("main-container").style.display = "none";
 }
 
 // ---------------------------------------------------------------------------------Main Function for Edit,
@@ -131,18 +132,21 @@ function displayTable(rentalData) {
 // Popup functions
 times2.addEventListener("click", function () {
   myModal2.style.display = "none";
-  document.getElementById("main-container").style.display = "block";
+  document.getElementById("main-container").style.filter = "none";
+  document.getElementById("main-container").style.pointerEvents = "auto";
 });
 
 function openModal() {
   myModal2.style.display = "block";
-  document.getElementById("main-container").style.display = "none";
+  document.getElementById("main-container").style.filter = "blur(8px)";
+  document.getElementById("main-container").style.pointerEvents = "none";
 }
 
 // Close view modal
 viewClose.onclick = function () {
   viewModal.style.display = "none";
-  document.getElementById("main-container").style.display = "block";
+  document.getElementById("main-container").style.filter = "none";
+  document.getElementById("main-container").style.pointerEvents = "auto";
 };
 
 // Delete rental(working)
@@ -152,19 +156,6 @@ function deleteRental(index) {
   window.location.reload();
   displayTable();
 }
-
-// Close modal when clicking outside of the modal NOt working, work on it
-window.onclick = function (event) {
-  if (event.target == myModal2) {
-    myModal2.style.display = "none";
-  }
-  if (event.target == viewModal) {
-    viewModal.style.display = "none";
-  }
-  if (event.target == myModalEl) {
-    myModalEl.style.display = "none";
-  }
-};
 
 // Editing function.
 function editRental(index, indexValue) {
@@ -238,13 +229,15 @@ let myModalEl = document.getElementById("myModal1");
 
 bookButton.addEventListener("click", function () {
   console.log("button Got clicked");
-  document.getElementById("main-container").style.display = "none";
+  document.getElementById("main-container").style.filter = "blur(8px)";
+  document.getElementById("main-container").style.pointerEvents = "none";
   myModalEl.style.display = "block";
 });
 
 closeButton.addEventListener("click", function () {
   console.log("closed pop up");
-  document.getElementById("main-container").style.display = "block";
+  document.getElementById("main-container").style.filter = "none";
+  document.getElementById("main-container").style.pointerEvents = "auto";
   myModalEl.style.display = "none";
 });
 // ---------------------------------Add form.

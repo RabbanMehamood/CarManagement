@@ -9,12 +9,14 @@ onStartEndDate();
 bookButton.addEventListener("click", function () {
   console.log("button Got clicked");
   myModalEl.style.display = "block";
-  home.style.filter = "blur(20px)";
+  home.style.filter = "blur(10px)";
+  home.style.pointerEvents = "none";
 });
 
 closeButton.addEventListener("click", function () {
   myModalEl.style.display = "none";
   home.style.filter = "none";
+  home.style.pointerEvents = "auto";
 });
 // Start of Script for the Popup form
 

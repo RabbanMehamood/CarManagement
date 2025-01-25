@@ -50,34 +50,34 @@ function openViewModal(rental) {
   viewModal.style.display = "block";
   document.getElementById("main-container").style.filter = "blur(8px)";
   document.getElementById("main-container").style.pointerEvents = "none";
-  let details = `<div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:70px;">Rental ID:</span> <span>${
+  let details = `<div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:70px; text-wrap-mode: nowrap;">Rental ID:</span> <span>${
     rental.rentalId
   }</span></div>
-                  <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:62px;">Car Model: </span> <span>${
+                  <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:62px;text-wrap-mode: nowrap;">Car Model: </span> <span>${
                     rental.carModel
                   }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:64px;">Start Date:</span> <span>${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:64px;text-wrap-mode: nowrap;">Start Date:</span> <span>${
                      rental.rentStartDate
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:69px;">End Date:</span> <span>${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:69px;text-wrap-mode: nowrap;">End Date:</span> <span>${
                      rental.rentEndDate
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:20px;">Customer Name:</span> <span>${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:20px;text-wrap-mode: nowrap;">Customer Name:</span> <span>${
                      rental.customerName
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:57px;">Destination:</span> <spa>${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:57px;text-wrap-mode: nowrap;">Destination:</span> <spa>${
                      rental.destinationPlace
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:60px;">Start Place:</span><span> ${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:60px;text-wrap-mode: nowrap;">Start Place:</span><span> ${
                      rental.startPlace
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:63px;">Passenger:</span><span> ${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:63px;text-wrap-mode: nowrap;">Passenger:</span><span> ${
                      rental.isSinglePassenger ? "Yes" : "No"
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:70px;">Fuel Type:</span> <span>${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:70px;text-wrap-mode: nowrap;">Fuel Type:</span> <span>${
                      rental.fuelType
                    }</span></div>
-                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:62px;">Booked By:</span> <span>${
+                   <div style="display:flex; flex-direction:row;  padding: 6px;"><span style="margin-right:62px;text-wrap-mode: nowrap;">Booked By:</span> <span>${
                      rental.bookedBy
                    }</span></div>`;
   viewDetails.innerHTML = details;

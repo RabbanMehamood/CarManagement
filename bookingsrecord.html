@@ -41,6 +41,7 @@
               placeholder="Ex: RentalId: 002"
               value=""
               class="searchInputstyle"
+              oninput="filterTable()"
             />
             <button
               id="searchIconButton"
@@ -90,6 +91,10 @@
             <!-- checked Getting object data here and table getting displayed ---------------------------- -->
           </tbody>
         </table>
+        <div
+          id="paginationControls"
+          style="text-align: center; margin: 30px"
+        ></div>
       </div>
     </div>
     <!-- Pop up for viewing rental details -------------------------------------------------------->

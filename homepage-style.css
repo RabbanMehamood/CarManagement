@@ -357,8 +357,8 @@ body {
   transform: translate(-50%, -50%);
   width: auto;
   color: aliceblue;
-  border-radius: 15px;
-  background-color: rgb(18, 78, 77);
+  border-radius: 7px;
+  background-color: rgb(120, 87, 87);
   height: 70%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -370,18 +370,18 @@ body {
   justify-content: center;
   position: sticky;
   top: 0px;
-  border-radius: 15px;
-  background-color: rgb(18, 78, 77);
+  background-color: rgb(98, 56, 56);
 }
 .modal-content {
   border: none;
-  border-radius: 20px;
+  border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: stretch;
+  padding: 10px;
 }
 .close {
   cursor: pointer;
@@ -424,7 +424,8 @@ form > div > input {
   border-radius: 6px;
   border: none;
   width: 100px;
-  float: right;
+  margin-left: 200px;
+  margin-top: 38px;
 }
 
 form > div > label {
@@ -432,6 +433,8 @@ form > div > label {
   display: inline-block;
   margin-right: 80px;
   font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
 }
 
 /* @media only screen and (max-device-width: 480px) {

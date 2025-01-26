@@ -50,8 +50,8 @@ tr:hover {
   transform: translate(-50%, -50%);
   width: auto;
   color: aliceblue;
-  border-radius: 15px;
-  background-color: darkslategrey;
+  border-radius: 7px 7px 7px 7px;
+  background-color: rgb(120, 87, 87);
 }
 
 /* Add button pop up style ------------------------------------------------------------*/
@@ -64,8 +64,8 @@ tr:hover {
   transform: translate(-50%, -50%);
   width: auto;
   color: aliceblue;
-  border-radius: 15px;
-  background-color: darkslategrey;
+  border-radius: 7px;
+  background-color: rgb(120, 87, 87);
   height: 70%;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -76,13 +76,13 @@ tr:hover {
   flex-wrap: nowrap;
   justify-content: center;
   position: sticky;
-  top: 0px;
-  border-radius: 15px;
-  background-color: #124e4d;
+  border-radius: 7px;
+  top: 1px;
+  background-color: rgb(98, 56, 56);
 }
 .modal_content {
   border: none;
-  border-radius: 20px;
+  border-radius: 7px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,6 +101,8 @@ tr:hover {
 /* styling Form */
 form > div > label {
   font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
 }
 form > div {
   display: flex;
@@ -133,12 +135,15 @@ form > div > input {
   border-radius: 6px;
   border: none;
   width: 100px;
-  float: right;
+  margin-left: 200px;
+  margin-top: 38px;
 }
 
 form > div > label {
   color: aliceblue;
   display: block;
+  font-weight: 600;
+  letter-spacing: 0.7px;
   margin-right: 80px;
 }
 
@@ -151,7 +156,9 @@ form > div > label {
   position: relative;
   align-items: flex-start;
   margin: auto;
+  font-size: 13px;
   width: 300px;
+  letter-spacing: 0.5px;
   height: max-content;
   padding: 30px;
 }

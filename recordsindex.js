@@ -86,10 +86,64 @@ function openViewModal(rental) {
 // ---------------------------------------------------------------------------------Main Function for Edit,
 
 // Display table functionality(working)
+const paginationControls = document.getElementById("paginationControls");
+const recordsPerPage = 5; // Set the number of records per page
+let currentPage = 1;
+// function displayTable(rentalData) {
+//   rentalTable.innerHTML = "";
+
+//   rentalData.forEach((rental, index) => {
+//     const row = document.createElement("tr");
+//     row.innerHTML = `
+//             <td>${rental.rentalId}</td>
+//             <td>${rental.carModel}</td>
+//             <td>${rental.fuelType}</td>
+//             <td>${rental.bookedBy}</td>
+//             <td>${rental.rentStartDate}</td>
+//             <td>${rental.rentEndDate}</td>
+//             <td>${rental.customerName}</td>
+//             <td>
+//                 <button style="cursor:pointer;    padding: 4px;
+//     border-radius: 7px;
+//     height: 36px;
+//     background: black;
+//     color: white;
+//     width:70px;
+//     margin:5px;
+//     font-weight: 600;" onclick="editRental(rentalData[${index}], ${index})">Edit</button>
+//                 <button style="cursor:pointer     padding: 4px;
+//     border-radius: 7px;
+//     height: 36px;
+//       width:70px;
+//     margin:5px;
+//     background: black;
+//     color: white;
+//     font-weight: 600;" onclick="deleteRental(${index})">Delete</button>
+//                 <button style="cursor:pointer;     padding: 4px;
+//     border-radius: 7px;
+//     height: 36px;
+//       width:70px;
+//     margin:5px;
+//     background: black;
+//     color: white;
+//     font-weight: 600;" onclick="openViewModal(rentalData[${index}])">View</button>
+//             </td>
+//         `;
+//     rentalTable.appendChild(row);
+//   });
+// }
 function displayTable(rentalData) {
   rentalTable.innerHTML = "";
+  const totalRecords = rentalData.length;
+  const totalPages = Math.ceil(totalRecords / recordsPerPage);
 
-  rentalData.forEach((rental, index) => {
+  // Calculate the start and end index for the current page
+  const startIndex = (currentPage - 1) * recordsPerPage;
+  const endIndex = Math.min(startIndex + recordsPerPage, totalRecords);
+
+  // Display the records for the current page
+  for (let i = startIndex; i < endIndex; i++) {
+    const rental = rentalData[i];
     const row = document.createElement("tr");
     row.innerHTML = `
             <td>${rental.rentalId}</td>
@@ -100,34 +154,36 @@ function displayTable(rentalData) {
             <td>${rental.rentEndDate}</td>
             <td>${rental.customerName}</td>
             <td>
-                <button style="cursor:pointer;    padding: 4px;
-    border-radius: 7px;
-    height: 36px;
-    background: black;
-    color: white;
-    width:70px;
-    margin:5px;
-    font-weight: 600;" onclick="editRental(rentalData[${index}], ${index})">Edit</button>
-                <button style="cursor:pointer     padding: 4px;
-    border-radius: 7px;
-    height: 36px;
-      width:70px;
-    margin:5px;
-    background: black;
-    color: white;
-    font-weight: 600;" onclick="deleteRental(${index})">Delete</button>
-                <button style="cursor:pointer;     padding: 4px;
-    border-radius: 7px;
-    height: 36px;
-      width:70px;
-    margin:5px;
-    background: black;
-    color: white;
-    font-weight: 600;" onclick="openViewModal(rentalData[${index}])">View</button>
+                <button style="cursor:pointer; padding: 4px; border-radius: 7px; height: 36px; background: black; color: white; width:70px; margin:5px; font-weight: 600;" onclick="editRental(rentalData[${i}], ${i})">Edit</button>
+                <button style="cursor:pointer; padding: 4px; border-radius: 7px; height: 36px; width:70px; margin:5px; background: black; color: white; font-weight: 600;" onclick="deleteRental(${i})">Delete</button>
+                <button style="cursor:pointer; padding: 4px; border-radius: 7px; height: 36px; width:70px; margin:5px; background: black; color: white; font-weight: 600;" onclick="openViewModal(rentalData[${i}])">View</button>
             </td>
         `;
     rentalTable.appendChild(row);
-  });
+  }
+
+  // Display pagination controls
+  displayPagination(totalPages);
+}
+
+function displayPagination(totalPages) {
+  paginationControls.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.innerText = i;
+    button.style.cursor = "pointer";
+    button.style.margin = "0 5px";
+    button.style.padding = "5px 10px";
+    button.style.borderRadius = "5px";
+    button.style.background = currentPage === i ? "gray" : "black";
+    button.style.color = "white";
+    button.onclick = () => {
+      currentPage = i;
+      displayTable(rentalData);
+    };
+    paginationControls.appendChild(button);
+  }
 }
 // Popup functions
 times2.addEventListener("click", function () {
@@ -311,23 +367,23 @@ rentalForm1.addEventListener("submit", function (e) {
 
 // Search Button Functionality-----------------------------------
 const searchIcon = document.getElementById("searchIconButton");
-searchIcon.addEventListener("click", function () {
-  console.log("search icon working");
-  let searchValue = document.getElementById("rentalIdValue").value;
 
-  searchValue = searchValue.trim();
+function filterTable() {
+  console.log("search icon working");
+  let searchValue = document.getElementById("rentalIdValue").value.trim();
   console.log(searchValue);
   if (searchValue === "") {
-    window.location.reload();
+    currentPage = 1;
     displayTable(rentalData);
   } else {
     const filteredData = rentalData.filter(
       (rental) => rental.rentalId == searchValue
     );
+    currentPage = 1;
     console.log(filteredData, searchValue);
     displayTable(filteredData);
   }
-});
+}
 //End of Search Button--------------------------------------
 
 // -------------------

@@ -173,20 +173,6 @@ form > div > label {
   justify-content: space-between;
 }
 
-/*     display: none;
-    display: block;
-    text-align: center;
-    position: fixed;
-    overflow: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    color: aliceblue;
-    border-radius: 15px;
-    background-color: darkslategrey;
-    height: 80%; */
-
 .searchInputstyle {
   width: 255px;
   height: 34px;

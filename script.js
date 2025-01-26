@@ -4,7 +4,7 @@ function validateLoginForm(event) {
   var name = document.getElementById("logName").value;
   var password = document.getElementById("logPassword").value;
   console.log(name, password);
-  // For Admin.
+  // working checked for  Admin.
   if (name == "Admin" && password == "Admin") {
     window.location.href = "./homepage.html";
     localStorage.setItem("username", name);

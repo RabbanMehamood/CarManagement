@@ -63,6 +63,7 @@ body {
   width: 100%;
   min-width: 90px;
   max-width: 95px;
+  margin: 0px 18px;
   border-radius: 7px;
   background-color: #010101;
   font-family: sans-serif;
@@ -411,14 +412,13 @@ form > div > input {
   border-radius: 6px;
   border: none;
   width: 100px;
-  margin-left: 200px;
+  margin-left: 164px;
   margin-top: 38px;
 }
 
 form > div > label {
   color: aliceblue;
   display: inline-block;
-  margin-right: 80px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.7px;

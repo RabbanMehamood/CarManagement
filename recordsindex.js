@@ -87,51 +87,8 @@ function openViewModal(rental) {
 
 // Display table functionality(working)
 const paginationControls = document.getElementById("paginationControls");
-const recordsPerPage = 5; // Set the number of records per page
+const recordsPerPage = 5;
 let currentPage = 1;
-// function displayTable(rentalData) {
-//   rentalTable.innerHTML = "";
-
-//   rentalData.forEach((rental, index) => {
-//     const row = document.createElement("tr");
-//     row.innerHTML = `
-//             <td>${rental.rentalId}</td>
-//             <td>${rental.carModel}</td>
-//             <td>${rental.fuelType}</td>
-//             <td>${rental.bookedBy}</td>
-//             <td>${rental.rentStartDate}</td>
-//             <td>${rental.rentEndDate}</td>
-//             <td>${rental.customerName}</td>
-//             <td>
-//                 <button style="cursor:pointer;    padding: 4px;
-//     border-radius: 7px;
-//     height: 36px;
-//     background: black;
-//     color: white;
-//     width:70px;
-//     margin:5px;
-//     font-weight: 600;" onclick="editRental(rentalData[${index}], ${index})">Edit</button>
-//                 <button style="cursor:pointer     padding: 4px;
-//     border-radius: 7px;
-//     height: 36px;
-//       width:70px;
-//     margin:5px;
-//     background: black;
-//     color: white;
-//     font-weight: 600;" onclick="deleteRental(${index})">Delete</button>
-//                 <button style="cursor:pointer;     padding: 4px;
-//     border-radius: 7px;
-//     height: 36px;
-//       width:70px;
-//     margin:5px;
-//     background: black;
-//     color: white;
-//     font-weight: 600;" onclick="openViewModal(rentalData[${index}])">View</button>
-//             </td>
-//         `;
-//     rentalTable.appendChild(row);
-//   });
-// }
 function displayTable(rentalData) {
   rentalTable.innerHTML = "";
   const totalRecords = rentalData.length;

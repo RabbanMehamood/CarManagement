@@ -135,7 +135,7 @@ form > div > input {
   border-radius: 6px;
   border: none;
   width: 100px;
-  margin-left: 200px;
+  margin-left: 168px;
   margin-top: 38px;
 }
 
@@ -144,7 +144,6 @@ form > div > label {
   display: block;
   font-weight: 600;
   letter-spacing: 0.7px;
-  margin-right: 80px;
 }
 
 /* End of  Add Button styles-------------------------------------------------------------- */
@@ -156,9 +155,7 @@ form > div > label {
   position: relative;
   align-items: flex-start;
   margin: auto;
-  font-size: 13px;
   width: 300px;
-  letter-spacing: 0.5px;
   height: max-content;
   padding: 30px;
 }

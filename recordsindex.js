@@ -7,6 +7,7 @@ function saveToLocalStorage(rentalData) {
 onStartRentDate();
 onStartEndDate();
 function onStartRentDate() {
+  //inserting Date string in the card
   var date = new Date();
 
   var day = date.getDate();
